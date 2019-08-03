@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Fab } from '@material-ui/core';
 import useTwitterLogin from 'hooks/Login/useTwitterLogin';
 import useGoogleLogin from 'hooks/Login/useGoogleLogin';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import useStyles from './styles';
 
 const googleIcon = require('images/icons8-google-48.png');
@@ -14,7 +16,10 @@ const Home = () => {
   return (
     <div className={classes.buttonWrapper}>
       <Fab aria-label="Delete" className={classes.twitterLoginButton} onClick={() => twitterLogin()}>
-        <i className={['fab fa-twitter fa-lg', classes.twitterIcon].join(' ')} />
+        {/* <FontAwesomeIcon icon={['fab', 'twitter-f']} /> */}
+        <FontAwesomeIcon icon={faTwitter} size={"lg"} className={classes.twitterIcon} />
+
+        {/* <i className={['fab fa-twitter fa-lg', classes.twitterIcon].join(' ')} /> */}
         Twitterでログイン
       </Fab>
       <Fab aria-label="Delete" className={classes.googleLoginButton} onClick={() => googleLogin()}>
