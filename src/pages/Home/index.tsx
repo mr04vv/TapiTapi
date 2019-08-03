@@ -17,7 +17,7 @@ const Home = () => {
     <div className={classes.buttonWrapper}>
       <Fab aria-label="Delete" className={classes.twitterLoginButton} onClick={() => twitterLogin()}>
         {/* <FontAwesomeIcon icon={['fab', 'twitter-f']} /> */}
-        <FontAwesomeIcon icon={faTwitter} size={"lg"} className={classes.twitterIcon} />
+        <FontAwesomeIcon icon={faTwitter} size="lg" className={classes.twitterIcon} />
 
         {/* <i className={['fab fa-twitter fa-lg', classes.twitterIcon].join(' ')} /> */}
         Twitterでログイン
