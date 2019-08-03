@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Top from 'pages/Top';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
+import * as serviceWorker from './serviceWorker';
 
 const store = configureStore();
 
@@ -24,3 +25,4 @@ reactDom.render(
   </Provider>,
   document.getElementById('root'),
 );
+serviceWorker.register();
