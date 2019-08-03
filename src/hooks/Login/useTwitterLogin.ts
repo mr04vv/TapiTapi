@@ -6,6 +6,8 @@ const useTwitterLogin = () => {
     firebase.auth().signInWithRedirect(providerTwitter);
     firebase.auth().getRedirectResult().then((result: any) => {
       // eslint-disable-next-line no-console
+      console.debug('aa');
+      console.debug(result);
       console.log(result);
       // TODO: ex. storeに送信, DB保存,...
     }).catch((error: Error) => {

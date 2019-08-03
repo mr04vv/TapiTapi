@@ -12,7 +12,7 @@ const Home = () => {
   const classes = useStyles();
   const twitterLogin = useTwitterLogin();
   const googleLogin = useGoogleLogin();
-
+  console.debug(googleLogin);
   return (
     <div className={classes.buttonWrapper}>
       <Fab aria-label="Delete" className={classes.twitterLoginButton} onClick={() => twitterLogin()}>
@@ -22,10 +22,12 @@ const Home = () => {
         {/* <i className={['fab fa-twitter fa-lg', classes.twitterIcon].join(' ')} /> */}
         Twitterでログイン
       </Fab>
-      <Fab aria-label="Delete" className={classes.googleLoginButton} onClick={() => googleLogin()}>
+      {!googleLogin.isLoading &&
+      <Fab aria-label="Delete" className={classes.googleLoginButton} onClick={() => googleLogin.loginWithGoogle()}>
         <img src={`${googleIcon}`} alt="googleIcon" className={['fab fa-google fa-lg', classes.googleIcon].join(' ')} />
         Googleでログイン
       </Fab>
+      }
     </div>
   );
 };
