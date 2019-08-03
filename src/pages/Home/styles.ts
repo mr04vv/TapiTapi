@@ -6,7 +6,7 @@ const LoginButton: CSSProperties = {
   textTransform: 'none',
   boxShadow: '0px 2px 4px rgba(0,0,0,0.3)',
   height: 20,
-  width: '30vw',
+  width: '200px',
   borderRadius: 20,
   margin: '10px auto',
 };
