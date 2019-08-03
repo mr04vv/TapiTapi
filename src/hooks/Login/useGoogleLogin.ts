@@ -1,3 +1,7 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 import firebase from 'firebase';
 import { providerGoogle } from 'index';
 import { useState, useEffect } from 'react';
@@ -7,30 +11,29 @@ const useGoogleLogin = () => {
   const [isLoading, setIsLoading] = useState<boolean>();
 
   useEffect(() => {
-    firebase.auth().getRedirectResult().then(function(result) {
+    firebase.auth().getRedirectResult().then((result) => {
       // setIsLoading(true);
-  
       if (result.credential) {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential;
-        console.debug(result)
+        const token = result.credential;
+        console.debug(result);
         // ...
       }
       // The signed-in user info.
-      var user = result.user;
+      const { user } = result;
       // setIsLoading(false);
       setUser(user);
-    }).catch(function(error) {
+    }).catch((error) => {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       // The email of the user's account used.
-      var email = error.email;
+      const { email } = error;
       // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
+      const { credential } = error;
       // ...
     });
-  }, [])
+  }, []);
 
   const loginWithGoogle = async () => {
     firebase.auth().signInWithRedirect(providerGoogle);
@@ -40,6 +43,7 @@ const useGoogleLogin = () => {
     loginWithGoogle,
     user,
     isLoading,
+    setIsLoading,
   };
 };
 
