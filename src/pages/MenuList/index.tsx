@@ -1,36 +1,77 @@
 import * as React from 'react';
-import { Fab } from '@material-ui/core';
-import useTwitterLogin from 'hooks/Login/useTwitterLogin';
-import useGoogleLogin from 'hooks/Login/useGoogleLogin';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import useStyles from './styles';
 
-const googleIcon = require('images/icons8-google-48.png');
 
-const Home = () => {
+const MenuList = () => {
   const classes = useStyles();
-  const twitterLogin = useTwitterLogin();
-  const googleLogin = useGoogleLogin();
+  // eslint-disable-next-line global-require
+  const thumbnailUrl = require('images/menu.png');
+
+  const drinkMenuList = [
+    {
+      id: 1, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+    {
+      id: 2, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+    {
+      id: 3, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+    {
+      id: 4, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+    {
+      id: 5, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+  ];
+
+  const foodMenuList = [
+    {
+      id: 1, enName: 'Cake', jaName: 'ソウ', price: '¥150円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+    {
+      id: 2, enName: 'Egg Tart', jaName: 'エッグタルト', price: '¥250円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+    {
+      id: 3, enName: 'Pudding', jaName: 'プリン', price: '¥250円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+    },
+  ];
+
   return (
     <div className={classes.buttonWrapper}>
-      <Fab aria-label="Delete" className={classes.twitterLoginButton} onClick={() => twitterLogin()}>
-        {/* <FontAwesomeIcon icon={['fab', 'twitter-f']} /> */}
-        <FontAwesomeIcon icon={faTwitter} size="lg" className={classes.twitterIcon} />
+      <img src={`${thumbnailUrl}`} alt="menuBackgroundImage" className={classes.thumbnailImage} />
+      <div className={classes.storeName}>Gongcha東京駅店</div>
+      <a href="#" className={classes.allergy}>アレルギー情報はこちら</a>
 
-        {/* <i className={['fab fa-twitter fa-lg', classes.twitterIcon].join(' ')} /> */}
-        Twitterでログイン
-      </Fab>
-      {!googleLogin.isLoading
-      && (
-      <Fab aria-label="Delete" className={classes.googleLoginButton} onClick={() => googleLogin.loginWithGoogle()}>
-        <img src={`${googleIcon}`} alt="googleIcon" className={['fab fa-google fa-lg', classes.googleIcon].join(' ')} />
-        Googleでログイン
-      </Fab>
-      )
-      }
+      <div className={classes.bodyWrapper}>
+        <h1 className={classes.caption}>ドリンク</h1>
+        {drinkMenuList.map(drinkMenu => (
+          <div className={classes.menuWrapper}>
+            <div>
+              <p className={classes.enMenuName}>{drinkMenu.enName}</p>
+              <p className={classes.jaMenuName}>{drinkMenu.jaName}</p>
+              <p className={classes.price}>{drinkMenu.price}</p>
+            </div>
+            <img src={drinkMenu.image} alt="menuImage" className={classes.menuImage} />
+          </div>
+        ))}
+      </div>
+
+      <div className={classes.bodyWrapper}>
+        <h1 className={classes.caption}>フード</h1>
+        {foodMenuList.map(drinkMenu => (
+          <div className={classes.menuWrapper}>
+            <div>
+              <p className={classes.enMenuName}>{drinkMenu.enName}</p>
+              <p className={classes.jaMenuName}>{drinkMenu.jaName}</p>
+              <p className={classes.price}>{drinkMenu.price}</p>
+            </div>
+            <img src={drinkMenu.image} alt="menuImage" className={classes.menuImage} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default MenuList;
