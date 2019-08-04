@@ -7,12 +7,13 @@ import SelectMenuItem from './SelectMenuItem';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Button from '@material-ui/core/Button';
 
+const thumbnail = require('images/img_ad1aa8fefac6d770b0441fefbfceb61b917960.jpg');
+
 const DetailMenu = () => {
     const classes = useStyles();
     return (
         <div>
-            {/* 画像 */}
-            <div style={{height: '160px'}}></div>
+            <img style={{height: '160px'}} src={`${thumbnail}`} />
 
             <div className={classes.menuArea}>
                 <div className={classes.menuTitleArea}>
