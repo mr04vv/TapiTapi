@@ -20,7 +20,7 @@ const MenuListItem = ({ label, menus }: PropsInterface) => {
             <p className={classes.jaMenuName}>{menu.jaName}</p>
             <p className={classes.price}>{menu.price}</p>
           </div>
-          <img src={menu.image} alt="menuImage" className={classes.menuImage} />
+          <img src={menu.imageUrl} alt="menuImage" className={classes.menuImage} />
         </div>
       ))}
     </div>

@@ -3,7 +3,7 @@ interface MenuInterface {
     enName: string,
     jaName: string,
     price: string,
-    image: string,
+    imageUrl: string,
 }
 
 export default MenuInterface;

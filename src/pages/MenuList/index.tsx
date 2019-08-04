@@ -1,7 +1,7 @@
 import * as React from 'react';
-import useStyles from './styles';
 import MenuListItem from 'pages/MenuListItem';
 import MenuInterface from 'interfaces/MenuInterface';
+import useStyles from './styles';
 
 const thumbnailUrl = require('images/menu.png');
 
@@ -10,31 +10,31 @@ const MenuList = () => {
 
   const drinkMenuList: MenuInterface[] = [
     {
-      id: 1, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 1, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
     {
-      id: 2, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 2, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
     {
-      id: 3, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 3, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
     {
-      id: 4, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 4, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
     {
-      id: 5, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 5, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
   ];
 
   const foodMenuList: MenuInterface[] = [
     {
-      id: 1, enName: 'Cake', jaName: 'ソウ', price: '¥150円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 1, enName: 'Cake', jaName: 'ソウ', price: '¥150円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
     {
-      id: 2, enName: 'Egg Tart', jaName: 'エッグタルト', price: '¥250円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 2, enName: 'Egg Tart', jaName: 'エッグタルト', price: '¥250円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
     {
-      id: 3, enName: 'Pudding', jaName: 'プリン', price: '¥250円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
+      id: 3, enName: 'Pudding', jaName: 'プリン', price: '¥250円〜', imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
   ];
 
