@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => createStyles({
     width: '40px',
     height: '40px',
     borderRadius: '50%',
-    margin: 'auto',
+    margin: 'auto 5px',
   },
   content: {
     ...Text,
