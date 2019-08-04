@@ -1,19 +1,41 @@
 import * as React from 'react';
-import GoogleMapReact from 'google-map-react';
+import { MapComponent } from './components';
 
 export interface SearchPageProps {}
 
-const SearchPage: React.SFC<SearchPageProps> = () => (
-  <div style={{ height: '100vh', width: '100%' }}>
-    <GoogleMapReact
-      bootstrapURLKeys={{ key: 'AIzaSyAr73HIS1eIkMOkWxRWXDMoUUpYk796fsI' }}
-      defaultCenter={{
-        lat: 35.2479887,
-        lng: 135.7886988,
-      }}
-      defaultZoom={11}
-    />
-  </div>
-);
+type State = {
+  lat: number;
+  lng: number;
+};
+
+class SearchPage extends React.Component<SearchPageProps, State> {
+  state = {
+    lat: 0,
+    lng: 0,
+  };
+
+  componentDidMount() {
+    this.getCurrentLocation();
+  }
+
+  // FIXME: 動かないいいいい
+  getCurrentLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          this.setState({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        error => console.error(error)
+      );
+    }
+  };
+
+  render() {
+    return <MapComponent />;
+  }
+}
 
 export default SearchPage;
