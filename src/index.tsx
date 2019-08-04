@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from 'pages/Home';
+import Search from 'pages/Search';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
@@ -25,11 +26,10 @@ firebase.initializeApp(firebaseConfig);
 const store = configureStore();
 
 const App = () => (
-
   <Switch>
+    <Route exact path="/search" component={Search} />
     <Route exact path="" component={Home} />
   </Switch>
-
 );
 
 // React entry point.
@@ -39,6 +39,6 @@ reactDom.render(
       <App />
     </Router>
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 serviceWorker.register();
