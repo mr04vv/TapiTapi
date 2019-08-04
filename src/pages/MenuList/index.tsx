@@ -41,7 +41,7 @@ const MenuList = () => {
     <div className={classes.buttonWrapper}>
       <img src={`${thumbnailUrl}`} alt="menuBackgroundImage" className={classes.thumbnailImage} />
       <div className={classes.storeName}>Gongcha東京駅店</div>
-      <a href="#" className={classes.allergy}>アレルギー情報はこちら</a>
+      <a href="#allergy" className={classes.allergy}>アレルギー情報はこちら</a>
 
       <div className={classes.bodyWrapper}>
         <h1 className={classes.caption}>ドリンク</h1>
