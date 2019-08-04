@@ -1,13 +1,14 @@
 import * as React from 'react';
 import useStyles from './styles';
+import MenuListItem from 'pages/MenuListItem';
+import MenuInterface from 'interfaces/MenuInterface';
 
+const thumbnailUrl = require('images/menu.png');
 
 const MenuList = () => {
   const classes = useStyles();
-  // eslint-disable-next-line global-require
-  const thumbnailUrl = require('images/menu.png');
 
-  const drinkMenuList = [
+  const drinkMenuList: MenuInterface[] = [
     {
       id: 1, enName: 'Original', jaName: 'オリジナル', price: '¥300円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
@@ -25,7 +26,7 @@ const MenuList = () => {
     },
   ];
 
-  const foodMenuList = [
+  const foodMenuList: MenuInterface[] = [
     {
       id: 1, enName: 'Cake', jaName: 'ソウ', price: '¥150円〜', image: 'https://www.fashion-press.net/img/news/45290/LJc.jpg',
     },
@@ -42,34 +43,14 @@ const MenuList = () => {
       <img src={`${thumbnailUrl}`} alt="menuBackgroundImage" className={classes.thumbnailImage} />
       <div className={classes.storeName}>Gongcha東京駅店</div>
       <a href="#allergy" className={classes.allergy}>アレルギー情報はこちら</a>
-
-      <div className={classes.bodyWrapper}>
-        <h1 className={classes.caption}>ドリンク</h1>
-        {drinkMenuList.map(drinkMenu => (
-          <div className={classes.menuWrapper}>
-            <div>
-              <p className={classes.enMenuName}>{drinkMenu.enName}</p>
-              <p className={classes.jaMenuName}>{drinkMenu.jaName}</p>
-              <p className={classes.price}>{drinkMenu.price}</p>
-            </div>
-            <img src={drinkMenu.image} alt="menuImage" className={classes.menuImage} />
-          </div>
-        ))}
-      </div>
-
-      <div className={classes.bodyWrapper}>
-        <h1 className={classes.caption}>フード</h1>
-        {foodMenuList.map(drinkMenu => (
-          <div className={classes.menuWrapper}>
-            <div>
-              <p className={classes.enMenuName}>{drinkMenu.enName}</p>
-              <p className={classes.jaMenuName}>{drinkMenu.jaName}</p>
-              <p className={classes.price}>{drinkMenu.price}</p>
-            </div>
-            <img src={drinkMenu.image} alt="menuImage" className={classes.menuImage} />
-          </div>
-        ))}
-      </div>
+      <MenuListItem
+        label="ドリンク"
+        menus={drinkMenuList}
+      />
+      <MenuListItem
+        label="フード"
+        menus={foodMenuList}
+      />
     </div>
   );
 };
