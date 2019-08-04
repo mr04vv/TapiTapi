@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from 'pages/Home';
+import PaymentComplete from 'pages/PaymentComplete';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
@@ -27,7 +28,8 @@ const store = configureStore();
 const App = () => (
 
   <Switch>
-    <Route exact path="" component={Home} />
+    <Route exact path="/" component={Home} />
+    <Route exact path="/paied" component={PaymentComplete} />
   </Switch>
 
 );
