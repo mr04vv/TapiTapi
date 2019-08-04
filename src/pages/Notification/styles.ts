@@ -12,15 +12,10 @@ const useStyles = makeStyles(() => createStyles({
     width: '90%',
     margin: '30px auto 0',
   },
-  caption: {
-    ...Text,
-    fontSize: '18px',
-    letterSpacing: '2.08px',
-    color: '#5c5c5c',
-  },
   contentWrapper: {
     display: 'flex',
     borderBottom: 'solid 1px #ebebeb',
+    margin: '20px 0',
   },
   rightWrapper: {
   },
@@ -36,7 +31,7 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '1.38px',
     color: '#5c5c5c',
     display: 'block',
-    margin : '5px',
+    margin: '5px',
   },
   time: {
     ...Text,
@@ -44,7 +39,7 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '1.15px',
     color: '#a5a5a5',
     display: 'block',
-    margin : '5px',
+    margin: '5px',
   },
 }));
 
