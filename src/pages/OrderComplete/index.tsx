@@ -6,13 +6,13 @@ const OrderComplete = () => {
 
   return (
     <div className={classes.contentWrapper}>
-      <p className={classes.text1}>
+      <p className={classes.headerText}>
         ご注文いただき、
         <br />
         ありがとうございます
       </p>
       <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/j/johnnadams/20180620/20180620095225.png" alt="barcode" className={classes.barcode} />
-      <p className={classes.text2}>順番がきましたらレジにてこちらのバーコードをおみせください。</p>
+      <p className={classes.footerText}>順番がきましたらレジにてこちらのバーコードをおみせください。</p>
     </div>
   );
 };
