@@ -2,7 +2,6 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { CSSProperties } from 'react';
 
 const CommonStyle: CSSProperties = {
-  fontFamily: 'NotoSansCJKjp',
   fontWeight: 500,
   fontStyle: 'normal',
 };
@@ -18,7 +17,6 @@ const useStyles = makeStyles(() => createStyles({
   },
   storeName: {
     ...CommonStyle,
-    fontFamily: 'NotoSansCJKjp',
     fontSize: '24px',
     letterSpacing: '2.77px',
     color: '#5c5c5c',

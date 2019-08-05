@@ -4,7 +4,6 @@ import { CSSProperties } from 'react';
 const Text: CSSProperties = {
   fontWeight: 500,
   fontStyle: 'normal',
-  fontFamily: 'NotoSansCJKjp',
 };
 
 const useStyles = makeStyles(() => createStyles({
