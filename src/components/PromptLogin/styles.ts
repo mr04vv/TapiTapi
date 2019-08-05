@@ -7,7 +7,7 @@ const LoginButton: CSSProperties = {
   boxShadow: 'none',
   borderRadius: 0,
   padding: 10,
-  width: '300px',
+  width: '290px',
   margin: '10px auto',
 };
 
