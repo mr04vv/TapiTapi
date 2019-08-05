@@ -10,6 +10,7 @@ import MenuList from 'pages/MenuList';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
+import Confirm from 'pages/Confirm';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -38,6 +39,7 @@ const App = () => (
     <Route exact path="/ordered" component={OrderComplete} />
     <Route exact path="/paid" component={PaymentComplete} />
     <Route exact path="/menus" component={MenuList} />
+    <Route exact path="/confirm" component={Confirm} />
   </Switch>
 
 );
