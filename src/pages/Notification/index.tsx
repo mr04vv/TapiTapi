@@ -30,11 +30,14 @@ const Notification = () => {
       <h1 className={commonClasses.caption}>お知らせ</h1>
       {notificationList.map((notification: NotificationInterface) => (
         <div className={classes.contentWrapper}>
-          <img src={notification.imageUrl} alt="imageUrl" className={classes.image} />
-          <div className={classes.rightWrapper}>
-            <p className={classes.content}>{notification.content}</p>
-            <p className={classes.time}>{notification.createdDate}</p>
+          <div className={classes.contentBody}>
+            <img src={notification.imageUrl} alt="imageUrl" className={classes.image} />
+            <div className={classes.rightWrapper}>
+              <p className={classes.content}>{notification.content}</p>
+              <p className={classes.time}>{notification.createdDate}</p>
+            </div>
           </div>
+          <hr className={classes.border} />
         </div>
       ))}
     </div>
