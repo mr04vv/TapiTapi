@@ -13,8 +13,15 @@ const useStyles = makeStyles(() => createStyles({
   },
   contentWrapper: {
     display: 'flex',
-    borderBottom: 'solid 1px #ebebeb',
-    margin: '20px 0',
+    flexDirection: 'column',
+  },
+  contentBody: {
+    display: 'flex',
+  },
+  border: {
+    borderWidth: '0.5px',
+    color: '#ebebeb',
+    width: '100%',
   },
   rightWrapper: {
   },
