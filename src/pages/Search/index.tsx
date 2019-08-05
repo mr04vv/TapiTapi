@@ -23,6 +23,7 @@ class SearchPage extends React.Component<SearchPageProps, State> {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => {
+          console.debug(position)
           this.setState({
             lat: position.coords.latitude,
             lng: position.coords.longitude,

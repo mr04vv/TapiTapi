@@ -6,6 +6,7 @@ import Search from 'pages/Search';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
+import GeoSearch from 'pages/GeoSearch';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -28,6 +29,7 @@ const store = configureStore();
 const App = () => (
   <Switch>
     <Route exact path="/search" component={Search} />
+    <Route exact path="/geoSearch" component={GeoSearch} />
     <Route exact path="" component={Home} />
   </Switch>
 );
@@ -39,6 +41,6 @@ reactDom.render(
       <App />
     </Router>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 serviceWorker.register();
