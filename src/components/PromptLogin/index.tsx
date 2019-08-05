@@ -13,18 +13,14 @@ const PromptLogin = () => {
   return (
     <div className={classes.buttonWrapper}>
       <p className={classes.p}>この機能を使用するにはログインが必要です</p>
-      <Button aria-label="Delete" className={classes.twitterLoginButton} onClick={() => twitterLogin()}>
+      <Button aria-label="Delete" className={classes.loginButton} onClick={() => twitterLogin()}>
         <FontAwesomeIcon icon={faTwitter} size="lg" className={classes.twitterIcon} />
         Twitterでログイン
       </Button>
-      {!googleLogin.isLoading
-      && (
-      <Button aria-label="Delete" className={classes.googleLoginButton} onClick={() => googleLogin.loginWithGoogle()}>
+      <Button aria-label="Delete" className={classes.loginButton} onClick={() => googleLogin.loginWithGoogle()}>
         <FontAwesomeIcon icon={faGoogle} size="lg" className={classes.twitterIcon} />
         Googleでログイン
       </Button>
-      )
-      }
     </div>
   );
 };

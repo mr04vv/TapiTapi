@@ -9,7 +9,7 @@ import MenuList from 'pages/MenuList';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
-import PromptLogin from 'pages/PromptLogin';
+import PromptLogin from 'components/PromptLogin';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();

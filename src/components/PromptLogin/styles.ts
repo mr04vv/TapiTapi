@@ -27,18 +27,13 @@ const useStyles = makeStyles(() => createStyles({
     height: 20,
     margin: '0 8px 0 0',
   },
-  twitterLoginButton: {
+  loginButton: {
     ...LoginButton,
     backgroundColor: '#ff9b47',
     color: '#ffffff',
     '&:hover': {
-      backgroundColor: '#1e80c9',
+      backgroundColor: '#d97827',
     },
-  },
-  googleLoginButton: {
-    ...LoginButton,
-    backgroundColor: '#ff9b47',
-    color: '#ffffff',
   },
   p: {
     ...Text,
