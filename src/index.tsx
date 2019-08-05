@@ -36,7 +36,7 @@ const App = () => (
     <Route exact path="/detail" component={DetailMenu} />
     <Route exact path="/notification" component={Notification} />
     <Route exact path="/ordered" component={OrderComplete} />
-    <Route exact path="/paied" component={PaymentComplete} />
+    <Route exact path="/paid" component={PaymentComplete} />
     <Route exact path="/menus" component={MenuList} />
   </Switch>
 
