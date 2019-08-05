@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Fab, Button } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import useTwitterLogin from 'hooks/Login/useTwitterLogin';
 import useGoogleLogin from 'hooks/Login/useGoogleLogin';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
