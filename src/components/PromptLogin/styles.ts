@@ -1,6 +1,5 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { CSSProperties } from 'react';
-import { Theme } from 'react-select/src/types';
 
 const LoginButton: CSSProperties = {
   fontSize: 12,
