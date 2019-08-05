@@ -3,6 +3,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from 'pages/Home';
 import DetailMenu from 'pages/DetailMenu';
+import Notification from 'pages/Notification';
+import OrderComplete from 'pages/OrderComplete';
+import PaymentComplete from 'pages/PaymentComplete';
+import MenuList from 'pages/MenuList';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
@@ -30,6 +34,10 @@ const App = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route exact path="/detail" component={DetailMenu} />
+    <Route exact path="/notification" component={Notification} />
+    <Route exact path="/ordered" component={OrderComplete} />
+    <Route exact path="/paied" component={PaymentComplete} />
+    <Route exact path="/menus" component={MenuList} />
   </Switch>
 
 );
