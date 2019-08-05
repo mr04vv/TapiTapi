@@ -1,11 +1,14 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { CSSProperties } from 'react';
+import { Theme } from 'react-select/src/types';
 
 const LoginButton: CSSProperties = {
   fontSize: 12,
   textTransform: 'none',
   boxShadow: 'none',
-  width: '200px',
+  borderRadius: 0,
+  padding: 10,
+  width: '300px',
   margin: '10px auto',
 };
 
@@ -31,6 +34,9 @@ const useStyles = makeStyles(() => createStyles({
     ...LoginButton,
     backgroundColor: '#ff9b47',
     color: '#ffffff',
+    '@media (max-width: 600px)': {
+      width: '80%',
+    },
     '&:hover': {
       backgroundColor: '#d97827',
     },
