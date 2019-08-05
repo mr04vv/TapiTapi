@@ -9,9 +9,10 @@ const Text: CSSProperties = {
 const useStyles = makeStyles(() => createStyles({
   caption: {
     ...Text,
-    fontSize: '18px',
+    fontSize: '16px',
     letterSpacing: '2.08px',
     color: '#5c5c5c',
+    margin: '20px auto',
   },
 }));
 

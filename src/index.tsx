@@ -38,6 +38,7 @@ const App = () => (
     <Route exact path="/ordered" component={OrderComplete} />
     <Route exact path="/paid" component={PaymentComplete} />
     <Route exact path="/menus" component={MenuList} />
+    <Route exact path="/notif" component={Notification} />
   </Switch>
 
 );
