@@ -2,7 +2,6 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { CSSProperties } from 'react';
 
 const Text: CSSProperties = {
-  fontFamily: 'NotoSansCJKjp',
   fontWeight: 500,
   fontStyle: 'normal',
   textAlign: 'center',

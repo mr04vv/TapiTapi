@@ -1,16 +1,21 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { CSSProperties } from 'react';
 
-const Text: CSSProperties = {
-  fontWeight: 500,
+const TitleLetter: CSSProperties = {
   fontStyle: 'normal',
+  fontStretch: 'normal',
+  lineHeight: 'normal',
 };
 
 const useStyles = makeStyles(() => createStyles({
-  caption: {
-    ...Text,
+  body: {
+    margin: '10px auto',
+    width: '90%',
+  },
+  titleLetter: {
+    ...TitleLetter,
     fontSize: '18px',
-    letterSpacing: '2.08px',
+    letterSpacing: '2.0px',
     color: '#5c5c5c',
   },
 }));
