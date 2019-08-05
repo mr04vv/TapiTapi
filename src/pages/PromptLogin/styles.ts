@@ -4,11 +4,14 @@ import { CSSProperties } from 'react';
 const LoginButton: CSSProperties = {
   fontSize: 12,
   textTransform: 'none',
-  boxShadow: '0px 2px 4px rgba(0,0,0,0.3)',
-  height: 20,
+  boxShadow: 'none',
   width: '200px',
-  borderRadius: 20,
   margin: '10px auto',
+};
+
+const Text: CSSProperties = {
+  fontWeight: 500,
+  fontStyle: 'normal',
 };
 
 const useStyles = makeStyles(() => createStyles({
@@ -26,7 +29,7 @@ const useStyles = makeStyles(() => createStyles({
   },
   twitterLoginButton: {
     ...LoginButton,
-    backgroundColor: '#55acee',
+    backgroundColor: '#ff9b47',
     color: '#ffffff',
     '&:hover': {
       backgroundColor: '#1e80c9',
@@ -34,8 +37,15 @@ const useStyles = makeStyles(() => createStyles({
   },
   googleLoginButton: {
     ...LoginButton,
-    backgroundColor: '#ffffff',
-    color: '#5f6368',
+    backgroundColor: '#ff9b47',
+    color: '#ffffff',
+  },
+  p: {
+    ...Text,
+    fontSize: '12px',
+    letterSpacing: '2.08px',
+    color: '#5c5c5c',
+    margin: '80px auto',
   },
 }));
 
