@@ -9,6 +9,7 @@ import MenuList from 'pages/MenuList';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
+import Confirm from 'pages/Confirm';
 import History from 'pages/History';
 import PromptLogin from 'components/PromptLogin';
 import * as serviceWorker from './serviceWorker';
@@ -38,6 +39,7 @@ const App = () => (
     <Route exact path="/ordered" component={OrderComplete} />
     <Route exact path="/paid" component={PaymentComplete} />
     <Route exact path="/menus" component={MenuList} />
+    <Route exact path="/confirm" component={Confirm} />
     <Route exact path="/notif" component={Notification} />
     <Route exact path="/histories" component={History} />
     {/* 必要ないけど確認するためにルーティング追加してる */}
