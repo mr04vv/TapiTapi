@@ -9,7 +9,7 @@ const Text: CSSProperties = {
 const useStyles = makeStyles(() => createStyles({
   bodyWrapper: {
     width: '90%',
-    margin: '30px auto 0',
+    margin: '30px auto 60px',
   },
   contentWrapper: {
     display: 'flex',

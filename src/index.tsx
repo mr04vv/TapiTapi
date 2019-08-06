@@ -12,6 +12,7 @@ import * as firebase from 'firebase';
 import Confirm from 'pages/Confirm';
 import History from 'pages/History';
 import PromptLogin from 'components/PromptLogin';
+import BottomFooter from 'components/BottomFooter';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -46,6 +47,7 @@ const App = () => (
     <Route exact path="/prompt" component={PromptLogin} />
   </Switch>
 
+
 );
 
 // React entry point.
@@ -53,6 +55,7 @@ reactDom.render(
   <Provider store={store}>
     <Router>
       <App />
+      <BottomFooter />
     </Router>
   </Provider>,
   document.getElementById('root'),

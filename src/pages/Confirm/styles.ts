@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => createStyles({
   body: {
-    margin: '10px auto',
+    margin: '10px auto 60px',
     width: '90%',
   },
   border: {

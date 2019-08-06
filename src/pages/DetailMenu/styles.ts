@@ -11,6 +11,7 @@ const useStyles = makeStyles(() => createStyles({
   body: {
     display: 'flex',
     flexDirection: 'column',
+    marginBottom: '60px',
   },
   thumbnail: {
     width: '100%',
