@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => createStyles({
   buttonWrapper: {
     display: 'flex',
     flexDirection: 'column',
+    marginBottom: '60px',
   },
   thumbnailImage: {
     width: '100%',
