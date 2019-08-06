@@ -1,12 +1,14 @@
 import * as React from 'react';
 import MenuListItem from 'pages/MenuListItem';
 import MenuInterface from 'interfaces/MenuInterface';
+import useScrollTop from 'hooks/ScrollTop/useScrollTop';
 import useStyles from './styles';
 
 const thumbnailUrl = require('images/menu.png');
 
 const MenuList = () => {
   const classes = useStyles();
+  useScrollTop();
 
   const drinkMenuList: MenuInterface[] = [
     {

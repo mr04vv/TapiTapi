@@ -1,11 +1,13 @@
 import * as React from 'react';
 import NotificationInterface from 'interfaces/NotificationInterface';
 import useCommonStyles from 'common/styles';
+import useScrollTop from 'hooks/ScrollTop/useScrollTop';
 import useStyles from './styles';
 
 const Notification = () => {
   const classes = useStyles();
   const commonClasses = useCommonStyles();
+  useScrollTop();
 
   const notificationList: NotificationInterface[] = [
     {

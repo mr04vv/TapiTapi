@@ -33,7 +33,6 @@ firebase.initializeApp(firebaseConfig);
 const store = configureStore();
 
 const App = () => (
-
   <Switch>
     <Route exact path="/detail" component={DetailMenu} />
     <Route exact path="/notification" component={Notification} />
@@ -46,8 +45,6 @@ const App = () => (
     {/* 必要ないけど確認するためにルーティング追加してる */}
     <Route exact path="/prompt" component={PromptLogin} />
   </Switch>
-
-
 );
 
 // React entry point.

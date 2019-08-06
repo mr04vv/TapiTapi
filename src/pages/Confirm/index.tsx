@@ -1,6 +1,7 @@
 import * as React from 'react';
 import useCommonStyles from 'common/styles';
 import { Button } from '@material-ui/core';
+import useScrollTop from 'hooks/ScrollTop/useScrollTop';
 import useStyles from './styles';
 import Item from './Item';
 
@@ -8,6 +9,8 @@ import Item from './Item';
 const Confirm = () => {
   const classes = useStyles();
   const commonClasses = useCommonStyles();
+  useScrollTop();
+
   const items = [
     {
       id: 1, enName: 'Cake', jaName: 'ソウ', price: 150, imageUrl: 'https://www.fashion-press.net/img/news/45290/LJc.jpg', options: ['ICE', 'M', '甘さ少なめ', '氷多め'], toppings: ['パール', 'トッピン２'], sum: 2,

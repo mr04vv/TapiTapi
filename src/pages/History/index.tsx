@@ -1,11 +1,13 @@
 import * as React from 'react';
 import useCommonStyles from 'common/styles';
+import useScrollTop from 'hooks/ScrollTop/useScrollTop';
 import useStyles from './styles';
 import HistoryItemList from './HistoryItemList';
 
 const History = () => {
   const classes = useStyles();
   const commonClasses = useCommonStyles();
+  useScrollTop();
 
   const histories = [
     {

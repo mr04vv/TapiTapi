@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from '@material-ui/core/Button';
+import useScrollTop from 'hooks/ScrollTop/useScrollTop';
 import useStyles from './styles';
 import SelectMenu from './SelectMenu';
 import RadioMenu from './RadioMenu';
@@ -9,7 +10,7 @@ const thumbnail = require('images/img_ad1aa8fefac6d770b0441fefbfceb61b917960.jpg
 
 const DetailMenu = () => {
   const classes = useStyles();
-
+  useScrollTop();
   return (
     <div className={classes.body}>
       <img src={`${thumbnail}`} alt="" className={classes.thumbnail} />
