@@ -5,7 +5,6 @@ import History from '@material-ui/icons/History';
 import SearchIcon from '@material-ui/icons/Search';
 import NotificationsNone from '@material-ui/icons/NotificationsNone';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
 import useNavigation from 'hooks/Footer/useNavigation';
 import useStyles from './styles';
 
@@ -15,10 +14,10 @@ const BottomFooter = () => {
 
   return (
     <BottomNavigation showLabels value={nav.value} onChange={nav.handleChange} className={classes.root}>
-      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="menus" icon={<SearchIcon />} />
-      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="histories" icon={<History />} />
-      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="notif" icon={<NotificationsNone />} />
-      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="prompt" icon={<AccountCircle />} />
+      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/menus" icon={<SearchIcon />} />
+      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/histories" icon={<History />} />
+      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/notif" icon={<NotificationsNone />} />
+      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/prompt" icon={<AccountCircle />} />
     </BottomNavigation>
   );
 };
