@@ -17,7 +17,7 @@ const Confirm = () => {
     },
   ];
   return (
-    <div>
+    <div className={classes.wrapper}>
       <div className={classes.body}>
         <h1 className={commonClasses.commonCaption}>ご注文内容の確認</h1>
         <Item selectedItem={items} />

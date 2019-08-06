@@ -1,8 +1,11 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => createStyles({
+  wrapper: {
+    marginBottom: '66px',
+  },
   body: {
-    margin: '10px auto 60px',
+    margin: '10px auto 0',
     width: '90%',
   },
   border: {

@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => createStyles({
   },
   bodyWrapper: {
     width: '90%',
-    margin: '30px auto 60px',
+    margin: '30px auto 66px',
   },
   contentWrapper: {
     display: 'flex',
