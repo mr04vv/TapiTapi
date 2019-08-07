@@ -19,6 +19,7 @@ const useConfirm = () => {
 
   const confirm = () => {
     const itemInfoEncodedBase64 = window.btoa(items);
+    localStorage.removeItem(`item${store.store!.id}`);
     history.push({
       pathname: `/ordered/${itemInfoEncodedBase64}`,
     });
