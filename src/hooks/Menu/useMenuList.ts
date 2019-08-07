@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 import { useSelector, useDispatch } from 'react-redux';
-import StoreInterface from 'interfaces/StoreInterface';
 import useGetStore from 'hooks/Store/useGetStore';
 import {
   getDrinkListSuccess, getFoodListSuccess, getDrinkCategoryListSuccess, getFoodCategoryListSuccess,
@@ -14,7 +13,7 @@ const useMenuList = () => {
   const menuSelector = (state: any) => state.menuList;
   const menuState = useSelector(menuSelector);
   const dispatch = useDispatch();
-  const store: StoreInterface | undefined = useGetStore();
+  const store = useGetStore();
   const [drinkList, setDrinkList] = useState<MenuInterface[]>([]);
   const [drinkCategoryList, setDrinkCategoryList] = useState<CategoryInterface[]>([]);
   const [foodList, setFoodList] = useState<MenuInterface[]>([]);
@@ -86,7 +85,8 @@ const useMenuList = () => {
     foodList,
     drinkCategoryList,
     foodCategoryList,
-    store,
+    store: store.store,
+    isLoading: store.isLoading,
   };
 };
 export default useMenuList;
