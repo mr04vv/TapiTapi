@@ -25,6 +25,16 @@ const useStyles = makeStyles(() => createStyles({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  formLabel: {
+    fontSize: '12px',
+    letterSpacing: '2.0px',
+  },
+  root: {
+    '&$checked': {
+      color: '#ED6103',
+    },
+  },
+  checked: {},
 }));
 
 export default useStyles;

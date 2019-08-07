@@ -57,7 +57,8 @@ const useStyles = makeStyles(() => createStyles({
   selectableAttension: {
     margin: '0 auto',
     width: '90%',
-    fontSize: '16px',
+    letterSpacing: '1.38px',
+    fontSize: '12px',
     color: '#a5a5a5',
   },
   ammount: {

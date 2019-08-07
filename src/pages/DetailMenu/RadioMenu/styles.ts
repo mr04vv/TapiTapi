@@ -6,8 +6,8 @@ const useStyles = makeStyles(() => createStyles({
     margin: '10px auto',
   },
   label: {
-    margin: '10px 0',
-    fontSize: '18px',
+    margin: '4px 0',
+    fontSize: '16px',
     letterSpacing: '2.0px',
     color: '#5c5c5c',
   },
@@ -31,6 +31,16 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '2.0px',
     color: '#a5a5a5',
   },
+  formLabel: {
+    fontSize: '12px',
+    letterSpacing: '2.0px',
+  },
+  root: {
+    '&$checked': {
+      color: '#ED6103',
+    },
+  },
+  checked: {},
 }));
 
 export default useStyles;

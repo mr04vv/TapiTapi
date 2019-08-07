@@ -2,6 +2,8 @@ import * as React from 'react';
 import {
   RadioGroup, FormControlLabel, Checkbox,
 } from '@material-ui/core';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import useStyles from './styles';
 
 interface PropsInterFace {
@@ -25,7 +27,20 @@ const CheckMenu = ({
       <RadioGroup className={isRow ? classes.row : ''}>
         {items.map((i: any) => (
           <div className={classes.inline}>
-            <FormControlLabel disabled={disabled} control={<Checkbox />} checked={value.includes(i)} label={i} onChange={() => handleChange(i)} />
+            <FormControlLabel
+              disabled={disabled}
+              control={(
+                <Checkbox
+                  classes={{ root: classes.root, checked: classes.checked }}
+                  icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
+                  checkedIcon={<CheckBoxIcon fontSize="small" />}
+                />
+              )}
+              checked={value.includes(i)}
+              label={i}
+              onChange={() => !disabled && handleChange(i)}
+              classes={{ label: classes.formLabel }}
+            />
             {<div className={classes.price}>+¥70</div>}
           </div>
         ))}
