@@ -4,22 +4,38 @@ import { CSSProperties } from 'react';
 const CommonStyle: CSSProperties = {
   fontWeight: 500,
   fontStyle: 'normal',
+  letterSpacing: '2.08px',
+  color: '#5c5c5c',
+  marginTop: '40px',
+  position: 'relative',
+  display: 'inline-block',
+  marginBottom: '1em',
 };
 
 const useStyles = makeStyles(() => createStyles({
-  caption: {
+  title: {
     ...CommonStyle,
-    fontSize: '18px',
-    letterSpacing: '2.08px',
-    color: '#5c5c5c',
-    marginTop: '40px',
-    position: 'relative',
-    display: 'inline-block',
-    marginBottom: '1em',
+    fontSize: '20px',
     '&::before': {
       content: "''",
       position: 'absolute',
-      left: '20%',
+      left: '18px',
+      bottom: '-20px',
+      marginBottom: '1em',
+      display: 'inline-block',
+      width: '25px',
+      height: '2px',
+      transform: 'translate(-50%)',
+      backgroundColor: '#ff9b47',
+    },
+  },
+  caption: {
+    ...CommonStyle,
+    fontSize: '12px',
+    '&::before': {
+      content: "''",
+      position: 'absolute',
+      left: '18px',
       bottom: '-20px',
       marginBottom: '1em',
       display: 'inline-block',
@@ -62,6 +78,10 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '1.62px',
     color: '#5c5c5c',
     margin: '8px 0',
+  },
+  itemWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
   },
 }));
 

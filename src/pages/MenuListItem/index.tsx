@@ -1,27 +1,33 @@
 import * as React from 'react';
-import MenuInterface from 'interfaces/MenuInterface';
+import MenuInterface, { MenuItemInterface } from 'interfaces/MenuInterface';
+import CategoryInterface from 'interfaces/CategoryInterface';
 import useStyles from './styles';
 
 interface PropsInterface {
-    label: string,
-    menus: MenuInterface[],
+    label: string;
+    menus: MenuInterface[];
+    categories: CategoryInterface[];
 }
 
-const MenuListItem = ({ label, menus }: PropsInterface) => {
+const MenuListItem = ({ label, menus, categories }: PropsInterface) => {
   const classes = useStyles();
 
   return (
     <div className={classes.bodyWrapper}>
-      <h1 className={classes.caption}>{label}</h1>
+      <p className={classes.title}>{label}</p>
       {menus.map((menu: MenuInterface) => (
-        <div className={classes.menuWrapper}>
-          <div>
-            <p className={classes.enMenuName}>{menu.enName}</p>
-            <p className={classes.jaMenuName}>{menu.jaName}</p>
-            <p className={classes.price}>{menu.price}</p>
-          </div>
-          <img src={menu.imageUrl} alt="menuImage" className={classes.menuImage} />
+        <div className={classes.itemWrapper}>
+          <p className={classes.caption}>{categories.find((c: CategoryInterface) => c.id === menu.categoryId)!.jaName}</p>
+          {menu.items.map((item: MenuItemInterface) => (
+            <div className={classes.menuWrapper}>
+              <div>
+                <p className={classes.enMenuName}>{item.enName}</p>
+                <p className={classes.jaMenuName}>{item.jaName}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
       ))}
     </div>
   );

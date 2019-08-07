@@ -1,9 +1,15 @@
 interface MenuInterface {
-    id: number,
-    enName: string,
-    jaName: string,
-    price: string,
-    imageUrl: string,
+    categoryId: number;
+    items: MenuItemInterface[];
+  }
+
+export interface MenuItemInterface {
+  id: number;
+  jaName: string;
+  enName: string;
+  price: object;
+  imageUrl: string;
+  isCustomizable?: boolean;
 }
 
 export default MenuInterface;
