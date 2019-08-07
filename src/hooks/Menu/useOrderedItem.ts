@@ -11,7 +11,7 @@ const useOrderedItem = () => {
 
   useEffect(() => {
     setInfoId(params.item);
-  }, []);
+  }, [params.item]);
 
   const db = firebase.firestore();
   db.collection('orderList').doc(params.item)
