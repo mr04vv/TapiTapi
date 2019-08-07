@@ -32,7 +32,7 @@ const useMenuList = () => {
     if (menuState.drinks.length > 0) {
       setDrinkList(menuState.drinks);
     }
-  }, [menuState.drinks.length, dispatch]);
+  }, [menuState.drinks, dispatch]);
 
   useEffect(() => {
     (async () => {
@@ -47,7 +47,7 @@ const useMenuList = () => {
     if (menuState.foods.length > 0) {
       setFoodList(menuState.foods);
     }
-  }, [menuState.foods.length, dispatch]);
+  }, [menuState.foods, dispatch]);
 
   useEffect(() => {
     (async () => {
@@ -62,7 +62,7 @@ const useMenuList = () => {
     if (menuState.drinkCategories.length > 0) {
       setDrinkCategoryList(menuState.drinkCategories);
     }
-  }, [menuState.drinkCategories.length, dispatch]);
+  }, [menuState.drinkCategories, dispatch]);
 
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const useMenuList = () => {
     if (menuState.foodCategories.length > 0) {
       setFoodCategoryList(menuState.foodCategories);
     }
-  }, [menuState.foodCategories.length, dispatch]);
+  }, [menuState.foodCategories, dispatch]);
 
   return {
     drinkList,
