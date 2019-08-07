@@ -20,7 +20,6 @@ interface InfoInterface {
 const MenuList = () => {
   const classes = useStyles();
   const info: InfoInterface = useMenuList();
-  console.debug(info);
   useScrollTop();
 
   return (
@@ -32,9 +31,18 @@ const MenuList = () => {
       <a href="#allergy" className={classes.allergy}>アレルギー情報はこちら</a>
       {info.drinkList.length > 0 && info.drinkCategoryList.length > 0 && (
         <MenuListItem
-          label="ドリンク"
+          label="Drinks"
           categories={info.drinkCategoryList}
           menus={info.drinkList}
+          storeId={info.store!.id}
+        />
+      )}
+      {info.foodList.length > 0 && info.foodCategoryList.length > 0 && (
+        <MenuListItem
+          label="Foods"
+          categories={info.foodCategoryList}
+          menus={info.foodList}
+          storeId={info.store!.id}
         />
       )}
 

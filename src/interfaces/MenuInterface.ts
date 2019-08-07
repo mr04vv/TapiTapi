@@ -7,7 +7,7 @@ export interface MenuItemInterface {
   id: number;
   jaName: string;
   enName: string;
-  price: object;
+  price: any;
   imageUrl: string;
   isCustomizable?: boolean;
 }
