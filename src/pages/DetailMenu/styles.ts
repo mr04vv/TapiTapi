@@ -7,6 +7,17 @@ const TitleLetter: CSSProperties = {
   lineHeight: 'normal',
 };
 
+const LoginButton: CSSProperties = {
+  fontSize: 14,
+  textTransform: 'none',
+  boxShadow: 'none',
+  borderRadius: 0,
+  letterSpacing: '2.08px',
+  padding: 10,
+  width: '290px',
+  margin: '10px auto',
+};
+
 const useStyles = makeStyles(() => createStyles({
   body: {
     display: 'flex',
@@ -48,6 +59,30 @@ const useStyles = makeStyles(() => createStyles({
     width: '90%',
     fontSize: '16px',
     color: '#a5a5a5',
+  },
+  ammount: {
+    color: '#ff9b47',
+    fontSize: '18px',
+    width: '90%',
+    margin: '0 auto',
+    textAlign: 'right',
+    letterSpacing: '1.38px',
+  },
+  underLine: {
+    width: '110px',
+    margin: 'auto 0 auto auto',
+  },
+  confirm: {
+    margin: '20px',
+    ...LoginButton,
+    backgroundColor: '#ff9b47',
+    color: '#ffffff',
+    '@media (max-width: 600px)': {
+      width: '80%',
+    },
+    '&:hover': {
+      backgroundColor: '#d97827',
+    },
   },
 }));
 

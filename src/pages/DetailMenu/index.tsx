@@ -5,6 +5,7 @@ import useMenuDetail from 'hooks/Menu/useMenuDetail';
 import useStyles from './styles';
 import SelectMenu from './SelectMenu';
 import RadioMenu from './RadioMenu';
+import CheckMenu from './CheckMenu';
 
 
 const thumbnail = require('images/img_ad1aa8fefac6d770b0441fefbfceb61b917960.jpg');
@@ -37,11 +38,13 @@ const DetailMenu = () => {
       }
       <RadioMenu items={menu.sweetList} label="甘さ" isRow value={menu.selectedSweetness} handleChange={menu.setSweet} />
       <RadioMenu items={menu.iceList} label="氷の量" isRow value={menu.selectedIce} handleChange={menu.setIce} />
-      {/* <RadioMenu items={menu.toppingList} label="トッピング（最大３つまで）" value={menu.selectedToppings} /> */}
+      <CheckMenu items={menu.toppingList} label="トッピング(最大３つまで)" value={menu.selectedToppings} handleChange={menu.setTopping} />
 
-      <SelectMenu label="個数" items={[1, 2, 3]} />
-
-      <Button variant="contained">注文内容を確認する</Button>
+      <SelectMenu label="個数" items={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} value={menu.count} handleChange={menu.setCount} />
+      <p className={classes.ammount}>
+        {`小計：${menu.ammount}円`}
+      </p>
+      <Button variant="contained" className={classes.confirm}>次へ進む</Button>
 
     </div>
   );

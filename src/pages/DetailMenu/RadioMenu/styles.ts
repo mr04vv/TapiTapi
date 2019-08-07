@@ -21,6 +21,7 @@ const useStyles = makeStyles(() => createStyles({
     width: '90%',
     letterSpacing: '2.0px',
     fontSize: '12px',
+    color: '#5c5c5c',
   },
   disablePrice: {
     textAlign: 'center',

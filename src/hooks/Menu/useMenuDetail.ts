@@ -30,6 +30,16 @@ const useMenuDetail = () => {
   const [selectedToppings, setTopping] = useState<ToppingType[]>([]);
   const [sizeSelectable, setSizeSelectable] = useState<boolean>(true);
   const [isOnlyIced, setIsOnlyIced] = useState<boolean>(false);
+  const [count, setCount] = useState<number>(1);
+  const [ammount, setAmmount] = useState<number>(0);
+  const [ammountSingleItem, setAmmountSingleItem] = useState<number>(0);
+
+
+  useEffect(() => {
+    const toppingAmmount = 70 * selectedToppings.length;
+    const sum = (ammountSingleItem + toppingAmmount + Number(selectedIce === 'ゼロ') * 70) * count;
+    setAmmount(sum);
+  }, [selectedToppings, ammountSingleItem, count, selectedIce]);
 
   useEffect(() => {
     if (typeName === 'Drinks' && menuList.drinkList.length > 0) {
@@ -37,6 +47,7 @@ const useMenuDetail = () => {
       setIsOnlyIced(drinkList!.isOnlyIced || false);
       const drink: MenuItemInterface | undefined = drinkList!.items.find((d: MenuItemInterface) => d.id === Number(id));
       setSizeSelectable(Object.keys(drink!.price).length > 1);
+      setAmmountSingleItem(drink && drink!.price.M);
       setItem(drink);
     } else if (typeName === 'Foods' && menuList.foodList.length > 0) {
       const foodList = menuList.foodList.find((d: MenuInterface) => d.categoryId === Number(categoryId))!.items;
@@ -44,6 +55,7 @@ const useMenuDetail = () => {
       setItem(food);
     }
   }, [menuList.drinkList, menuList.foodList, categoryId, id, typeName]);
+
   return {
     item,
     selectedTemp,
@@ -51,6 +63,7 @@ const useMenuDetail = () => {
     selectedSweetness,
     selectedIce,
     selectedToppings,
+    count,
     tempList,
     sizeList,
     iceList,
@@ -58,16 +71,27 @@ const useMenuDetail = () => {
     toppingList,
     sizeSelectable,
     isOnlyIced,
+    ammount,
+    setCount: (v: React.ChangeEvent<{ name?: string | undefined; value: unknown; }>) => {
+      setCount(Number(v.target.value));
+    },
     setTemp: (v: TempType) => setTemp(v),
     setSize: (v: SizeType) => {
       setSize(v);
+      setAmmountSingleItem(item && item!.price[v]);
       if (v === 'L') {
         setTemp('ICED');
       }
     },
     setSweet: (v: SelectType) => setSweet(v),
     setIce: (v: SelectType) => setIce(v),
-    setTopping,
+    setTopping: (v: ToppingType) => {
+      if (selectedToppings.includes(v)) {
+        setTopping(selectedToppings.filter(t => t !== v));
+      } else if (selectedToppings.length < 3) {
+        setTopping([...selectedToppings, v]);
+      }
+    },
   };
 };
 export default useMenuDetail;
