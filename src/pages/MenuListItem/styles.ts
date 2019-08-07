@@ -7,19 +7,30 @@ const CommonStyle: CSSProperties = {
 };
 
 const useStyles = makeStyles(() => createStyles({
-  caption: {
+  title: {
     ...CommonStyle,
-    fontSize: '18px',
+    fontSize: '20px',
     letterSpacing: '2.08px',
     color: '#5c5c5c',
-    marginTop: '40px',
+    marginTop: '10px',
+    position: 'relative',
+    textAlign: 'center',
+    display: 'block',
+    marginBottom: '1em',
+  },
+  caption: {
+    ...CommonStyle,
+    letterSpacing: '2.08px',
+    color: '#5c5c5c',
     position: 'relative',
     display: 'inline-block',
+    marginTop: '10px',
     marginBottom: '1em',
+    fontSize: '16px',
     '&::before': {
       content: "''",
       position: 'absolute',
-      left: '20%',
+      left: '18px',
       bottom: '-20px',
       marginBottom: '1em',
       display: 'inline-block',
@@ -31,7 +42,7 @@ const useStyles = makeStyles(() => createStyles({
   },
   bodyWrapper: {
     width: '90%',
-    margin: '10px auto',
+    margin: '0 auto',
   },
   menuWrapper: {
     display: 'flex',
@@ -62,6 +73,9 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '1.62px',
     color: '#5c5c5c',
     margin: '8px 0',
+  },
+  itemWrapper: {
+    marginBottom: '24px',
   },
 }));
 
