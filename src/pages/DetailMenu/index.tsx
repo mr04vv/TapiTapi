@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Button from '@material-ui/core/Button';
 import useScrollTop from 'hooks/ScrollTop/useScrollTop';
+import useMenuDetail from 'hooks/Menu/useMenuDetail';
 import useStyles from './styles';
 import SelectMenu from './SelectMenu';
 import RadioMenu from './RadioMenu';
@@ -10,6 +11,8 @@ const thumbnail = require('images/img_ad1aa8fefac6d770b0441fefbfceb61b917960.jpg
 
 const DetailMenu = () => {
   const classes = useStyles();
+  const menu = useMenuDetail();
+  console.debug(menu);
   useScrollTop();
   return (
     <div className={classes.body}>
@@ -20,12 +23,11 @@ const DetailMenu = () => {
         <div className={classes.subTitleLetter}>ゴンチャ スペシャル</div>
       </div>
 
-      <RadioMenu items={[1, 2, 3]} label="ベースティー" />
-      <RadioMenu items={['ICE', 'HOT']} label="ICE/HOT" isRow />
-      <RadioMenu items={['S', 'M', 'L']} label="サイズ" isRow />
-      <RadioMenu items={[1, 2, 3]} label="甘さ" />
-      <RadioMenu items={[1, 2, 3]} label="氷の量" />
-      <RadioMenu items={[1, 2, 3]} label="トッピング（最大３つまで）" />
+      <RadioMenu items={menu.tempList} label="ICED/HOT" isRow value={menu.selectedTemp} handleChange={menu.setTemp} />
+      <RadioMenu items={menu.sizeList} label="サイズ" isRow value={menu.selectedSize} handleChange={menu.setSize} />
+      <RadioMenu items={menu.sweetList} label="甘さ" isRow value={menu.selectedSweetness} handleChange={menu.setSweet} />
+      <RadioMenu items={menu.iceList} label="氷の量" isRow value={menu.selectedIce} handleChange={menu.setIce} />
+      {/* <RadioMenu items={menu.toppingList} label="トッピング（最大３つまで）" value={menu.selectedToppings} /> */}
 
       <SelectMenu label="個数" items={[1, 2, 3]} />
 

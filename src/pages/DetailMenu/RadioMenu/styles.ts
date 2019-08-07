@@ -11,6 +11,10 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '2.0px',
     color: '#5c5c5c',
   },
+  row: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
 }));
 
 export default useStyles;
