@@ -16,12 +16,19 @@ const useStyles = makeStyles(() => createStyles({
     width: '100%',
     objectFit: 'contain',
   },
-  storeName: {
+  title: {
     ...CommonStyle,
-    fontSize: '24px',
+    fontSize: '20px',
     letterSpacing: '2.77px',
     color: '#5c5c5c',
-    margin: '16px auto',
+    margin: '14px auto 0',
+  },
+  storeName: {
+    ...CommonStyle,
+    fontSize: '12px',
+    letterSpacing: '2.77px',
+    color: '#a5a5a5',
+    margin: '5px auto 10px',
   },
   allergy: {
     ...CommonStyle,
@@ -29,9 +36,9 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '1.38px',
     color: '#ff9b47',
     textAlign: 'right',
-    marginRight: '10px',
     textDecoration: 'none',
     cursor: 'pointer',
+    margin: '10px 8px 0 0',
   },
 }));
 

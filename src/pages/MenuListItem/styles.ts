@@ -31,7 +31,7 @@ const useStyles = makeStyles(() => createStyles({
   },
   bodyWrapper: {
     width: '90%',
-    margin: '10px auto',
+    margin: '0 auto',
   },
   menuWrapper: {
     display: 'flex',
