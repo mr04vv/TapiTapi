@@ -29,22 +29,28 @@ const MenuList = () => {
       <p className={classes.storeName}>{info.store && info.store.storeName}</p>
 
       <a href="#allergy" className={classes.allergy}>アレルギー情報はこちら</a>
-      {info.drinkList.length > 0 && info.drinkCategoryList.length > 0 && (
-        <MenuListItem
-          label="Drinks"
-          categories={info.drinkCategoryList}
-          menus={info.drinkList}
-          storeId={info.store!.id}
-        />
-      )}
-      {info.foodList.length > 0 && info.foodCategoryList.length > 0 && (
-        <MenuListItem
-          label="Foods"
-          categories={info.foodCategoryList}
-          menus={info.foodList}
-          storeId={info.store!.id}
-        />
-      )}
+      {!info.store ? <p className={classes.storeName}>店舗が見つかりませんでした</p>
+        : (
+          <React.Fragment>
+            {info.drinkList.length > 0 && info.drinkCategoryList.length > 0 && (
+            <MenuListItem
+              label="Drinks"
+              categories={info.drinkCategoryList}
+              menus={info.drinkList}
+              storeId={info.store!.id}
+            />
+            )}
+            {info.foodList.length > 0 && info.foodCategoryList.length > 0 && (
+            <MenuListItem
+              label="Foods"
+              categories={info.foodCategoryList}
+              menus={info.foodList}
+              storeId={info.store!.id}
+            />
+            )}
+          </React.Fragment>
+        )
+      }
 
       {/* <MenuListItem
         label="フード"
