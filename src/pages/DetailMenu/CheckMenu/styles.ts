@@ -6,8 +6,8 @@ const useStyles = makeStyles(() => createStyles({
     margin: '10px auto',
   },
   label: {
-    margin: '4px 0',
-    fontSize: '16px',
+    margin: '10px 0',
+    fontSize: '18px',
     letterSpacing: '2.0px',
     color: '#5c5c5c',
   },
@@ -17,19 +17,13 @@ const useStyles = makeStyles(() => createStyles({
   },
   price: {
     textAlign: 'center',
-    margin: '-10px auto 0',
-    width: '90%',
-    letterSpacing: '2.0px',
     fontSize: '12px',
     color: '#5c5c5c',
   },
-  disablePrice: {
-    textAlign: 'center',
-    margin: '-10px auto 0',
-    width: '90%',
-    fontSize: '12px',
-    letterSpacing: '2.0px',
-    color: '#a5a5a5',
+  inline: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   formLabel: {
     fontSize: '12px',

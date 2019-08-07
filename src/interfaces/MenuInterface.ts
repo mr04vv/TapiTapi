@@ -1,5 +1,6 @@
 interface MenuInterface {
     categoryId: number;
+    isOnlyIced?: boolean;
     items: MenuItemInterface[];
   }
 

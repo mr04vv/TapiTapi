@@ -1,8 +1,19 @@
 import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { CSSProperties } from 'react';
+
+const Button: CSSProperties = {
+  fontSize: 12,
+  textTransform: 'none',
+  boxShadow: 'none',
+  borderRadius: 0,
+  padding: 10,
+  width: '290px',
+  margin: '10px auto',
+};
 
 const useStyles = makeStyles(() => createStyles({
   wrapper: {
-    marginBottom: '66px',
+    marginBottom: '88px',
   },
   body: {
     margin: '10px auto 0',
@@ -31,9 +42,10 @@ const useStyles = makeStyles(() => createStyles({
     color: '#ff9b47',
   },
   determineButton: {
+    ...Button,
     width: '80vw',
     display: 'block',
-    margin: '20px auto 20px',
+    margin: '20px auto',
     color: '#ffffff',
     letterSpacing: '1.85px',
     backgroundColor: '#ff9b47',
