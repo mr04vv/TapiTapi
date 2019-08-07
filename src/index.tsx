@@ -34,11 +34,11 @@ const store = configureStore();
 
 const App = () => (
   <Switch>
-    <Route exact path="/detail" component={DetailMenu} />
     <Route exact path="/notification" component={Notification} />
     <Route exact path="/ordered" component={OrderComplete} />
     <Route exact path="/paid" component={PaymentComplete} />
     <Route exact path="/menus/:storeId" component={MenuList} />
+    <Route exact path="/menus/:storeId/detail" component={DetailMenu} />
     <Route exact path="/confirm" component={Confirm} />
     <Route exact path="/notif" component={Notification} />
     <Route exact path="/histories" component={History} />
