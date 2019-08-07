@@ -51,11 +51,6 @@ const MenuList = () => {
           </React.Fragment>
         )
       }
-
-      {/* <MenuListItem
-        label="フード"
-        menus={foodMenuList}
-      /> */}
     </div>
   );
 };

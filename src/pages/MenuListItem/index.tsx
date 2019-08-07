@@ -1,6 +1,7 @@
 import * as React from 'react';
 import MenuInterface, { MenuItemInterface } from 'interfaces/MenuInterface';
 import CategoryInterface from 'interfaces/CategoryInterface';
+import useRouter from 'use-react-router';
 import useStyles from './styles';
 
 interface PropsInterface {
@@ -14,6 +15,7 @@ const MenuListItem = ({
   label, menus, categories, storeId,
 }: PropsInterface) => {
   const classes = useStyles();
+  const { history } = useRouter();
 
   return (
     <div className={classes.bodyWrapper}>
@@ -24,7 +26,7 @@ const MenuListItem = ({
         <div key={label + menu.categoryId} className={classes.itemWrapper}>
           <p className={classes.caption}>{categories.find((c: CategoryInterface) => c.id === menu.categoryId)!.enName}</p>
           {menu.items.map((item: MenuItemInterface) => (
-            <div key={item.id} className={classes.menuWrapper}>
+            <div key={item.id} className={classes.menuWrapper} onClick={() => history.push({ pathname: '/detail', search: `?type=${label}&categoryId=${menu.categoryId}&id=${item.id}` })} role="presentation">
               <div>
                 <p className={classes.enMenuName}>{item.enName}</p>
                 <p className={classes.jaMenuName}>{item.jaName}</p>
