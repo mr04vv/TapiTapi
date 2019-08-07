@@ -27,7 +27,6 @@ const useStyles = makeStyles(() => createStyles({
   },
   button: {
     ...Button,
-    display: 'block',
     color: '#ffffff',
     letterSpacing: '1.85px',
     backgroundColor: '#ff9b47',
@@ -35,9 +34,14 @@ const useStyles = makeStyles(() => createStyles({
       backgroundColor: '#d97827',
     },
   },
+  loading: {
+    ...Button,
+    color: '#ffffff',
+    letterSpacing: '1.85px',
+    backgroundColor: '#a5a5a5',
+  },
   cancel: {
     ...Button,
-    display: 'block',
     letterSpacing: '1.85px',
   },
 }));

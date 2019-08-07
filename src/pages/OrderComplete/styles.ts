@@ -25,9 +25,9 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '1.85px',
   },
   barcode: {
-    width: '70%',
     display: 'block',
     margin: '30px auto',
+    textAlign: 'center',
   },
 }));
 

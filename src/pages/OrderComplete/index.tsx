@@ -1,17 +1,20 @@
 import * as React from 'react';
+import QRCode from 'qrcode.react';
+import useOrderedItem from 'hooks/Menu/useOrderedItem';
 import useStyles from './styles';
 
 const OrderComplete = () => {
   const classes = useStyles();
+  const itemInfo = useOrderedItem();
 
   return (
     <div className={classes.contentWrapper}>
       <p className={classes.headerText}>
-        ご注文いただき、
+        ご注文いただき
         <br />
         ありがとうございます
       </p>
-      <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/j/johnnadams/20180620/20180620095225.png" alt="barcode" className={classes.barcode} />
+      {itemInfo.infoId && <div className={classes.barcode}><QRCode value={itemInfo.infoId} /></div>}
       <p className={classes.footerText}>順番がきましたらレジにてこちらのバーコードをおみせください。</p>
     </div>
   );

@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import useGetStore from 'hooks/Store/useGetStore';
 import useReactRouter from 'use-react-router';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 const useConfirm = () => {
   const store = useGetStore();
   const [items, setItems] = useState<any>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isOrderLoading, setIsOrderLoading] = useState<boolean>(false);
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
   const { history } = useReactRouter();
 
@@ -17,10 +20,14 @@ const useConfirm = () => {
     }
   }, [store.store]);
 
-  const confirm = () => {
-    const itemInfoEncodedBase64 = window.btoa(items);
+  const confirm = async () => {
+    // localStorage.removeItem(`item${store.store!.id}`);
+    const db = firebase.firestore();
+    setIsOrderLoading(true);
+    const savedInfo = await db.collection('orderList').add({ ...items, isRead: false, storeInfo: store.store });
+    setIsOrderLoading(false);
     history.push({
-      pathname: `/ordered/${itemInfoEncodedBase64}`,
+      pathname: `/ordered/${savedInfo.id}`,
     });
   };
 
@@ -30,6 +37,7 @@ const useConfirm = () => {
     isShowModal,
     setIsShowModal,
     confirm,
+    isOrderLoading,
   };
 };
 export default useConfirm;

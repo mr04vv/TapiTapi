@@ -21,7 +21,7 @@ const Confirm = () => {
 
   return (
     <div className={classes.wrapper}>
-      <ConfirmModal handleChange={confirmItem.setIsShowModal} onConfirm={confirmItem.confirm} isOpen={confirmItem.isShowModal} />
+      <ConfirmModal handleChange={confirmItem.setIsShowModal} onConfirm={confirmItem.confirm} isOpen={confirmItem.isShowModal} isLoading={confirmItem.isOrderLoading} />
       <div className={classes.body}>
         <h1 className={commonClasses.commonCaption}>ご注文内容の確認</h1>
         {confirmItem.items
