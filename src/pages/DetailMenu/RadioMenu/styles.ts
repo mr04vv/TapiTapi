@@ -15,6 +15,21 @@ const useStyles = makeStyles(() => createStyles({
     display: 'flex',
     flexDirection: 'row',
   },
+  price: {
+    textAlign: 'center',
+    margin: '-10px auto 0',
+    width: '90%',
+    letterSpacing: '2.0px',
+    fontSize: '12px',
+  },
+  disablePrice: {
+    textAlign: 'center',
+    margin: '-10px auto 0',
+    width: '90%',
+    fontSize: '12px',
+    letterSpacing: '2.0px',
+    color: '#a5a5a5',
+  },
 }));
 
 export default useStyles;

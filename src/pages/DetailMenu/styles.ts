@@ -37,6 +37,18 @@ const useStyles = makeStyles(() => createStyles({
     letterSpacing: '1.38px',
     color: '#a5a5a5',
   },
+  sizeAttension: {
+    margin: '-15px auto 0',
+    width: '90%',
+    fontSize: '10px',
+    color: '#a5a5a5',
+  },
+  selectableAttension: {
+    margin: '0 auto',
+    width: '90%',
+    fontSize: '16px',
+    color: '#a5a5a5',
+  },
 }));
 
 export default useStyles;

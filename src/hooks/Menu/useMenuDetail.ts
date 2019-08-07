@@ -22,18 +22,21 @@ const useMenuDetail = () => {
   const [iceList] = useState<SelectType[]>(Choice);
   const [sweetList] = useState<SelectType[]>(Choice);
   const [toppingList] = useState<ToppingType[]>(ToppingTypeList);
-  const [item, setItem] = useState<any>();
+  const [item, setItem] = useState<MenuItemInterface>();
   const [selectedTemp, setTemp] = useState<TempType>('ICED');
   const [selectedSize, setSize] = useState<SizeType>('M');
   const [selectedSweetness, setSweet] = useState<SelectType>('ふつう');
   const [selectedIce, setIce] = useState<SelectType>('ふつう');
   const [selectedToppings, setTopping] = useState<ToppingType[]>([]);
-
+  const [sizeSelectable, setSizeSelectable] = useState<boolean>(true);
+  const [isOnlyIced, setIsOnlyIced] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeName === 'Drinks' && menuList.drinkList.length > 0) {
-      const drinkList = menuList.drinkList.find((d: MenuInterface) => d.categoryId === Number(categoryId))!.items;
-      const drink = drinkList.find((d: MenuItemInterface) => d.id === Number(id));
+      const drinkList = menuList.drinkList.find((d: MenuInterface) => d.categoryId === Number(categoryId));
+      setIsOnlyIced(drinkList!.isOnlyIced || false);
+      const drink: MenuItemInterface | undefined = drinkList!.items.find((d: MenuItemInterface) => d.id === Number(id));
+      setSizeSelectable(Object.keys(drink!.price).length > 1);
       setItem(drink);
     } else if (typeName === 'Foods' && menuList.foodList.length > 0) {
       const foodList = menuList.foodList.find((d: MenuInterface) => d.categoryId === Number(categoryId))!.items;
@@ -53,8 +56,15 @@ const useMenuDetail = () => {
     iceList,
     sweetList,
     toppingList,
+    sizeSelectable,
+    isOnlyIced,
     setTemp: (v: TempType) => setTemp(v),
-    setSize: (v: SizeType) => setSize(v),
+    setSize: (v: SizeType) => {
+      setSize(v);
+      if (v === 'L') {
+        setTemp('ICED');
+      }
+    },
     setSweet: (v: SelectType) => setSweet(v),
     setIce: (v: SelectType) => setIce(v),
     setTopping,
