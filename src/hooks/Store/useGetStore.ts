@@ -16,7 +16,7 @@ const useGetStore = () => {
       setStore(s);
       setIsLoading(false);
     }
-  }, [stores.storeList]);
+  }, [stores.storeList, match]);
 
   return {
     store,
