@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => createStyles({
     flexDirection: 'column',
     alignItems: 'center',
     margin: '45vh auto',
-  }
+  },
 }));
 
 export default useStyles;

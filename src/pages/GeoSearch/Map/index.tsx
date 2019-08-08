@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as React from 'react';
 import {
   GoogleApiWrapper, Map, Marker, GoogleAPI,
@@ -19,14 +20,15 @@ const CustomMap = (props: PropsInterface) => {
         <Map
           google={google}
           zoom={14}
-          style={{height: 'calc(100vh - 56px)'}}
+          style={{ height: 'calc(100vh - 56px)' }}
           initialCenter={{ lat: defaultLocation!.coords.latitude, lng: defaultLocation!.coords.longitude }}
         >
           {storeList.map((s: StoreInterface) => (
-              <Marker
+            <Marker
               title={s.storeName}
               position={{ lat: s.lat, lng: s.lng }}
-              onClick={() => console.debug('a')} 
+              // eslint-disable-next-line no-console
+              onClick={() => console.debug('a')}
             />
           ))}
         </Map>
@@ -36,5 +38,5 @@ const CustomMap = (props: PropsInterface) => {
 
 export default GoogleApiWrapper({
   apiKey: ('AIzaSyA7nrHvH38do8WHwKP-UPFedPJzUgw324Q'),
-  language: 'japanese'
+  language: 'japanese',
 })(CustomMap);

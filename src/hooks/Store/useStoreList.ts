@@ -17,7 +17,6 @@ const useStoreList = () => {
         const db = firebase.firestore();
         const storeRef = await db.collection('stores').doc('storeList').get();
         const stores = storeRef.data();
-        console.debug(stores)
         dispatch(getStoreListSuccess(stores!.items));
       }
     })();
