@@ -10,10 +10,13 @@ interface PropsInterface {
   defaultLocation: Position | undefined;
   loaded: boolean;
   storeList: StoreInterface[];
+  setIsShowModal: (v: StoreInterface | false) => void;
 }
 
 const CustomMap = (props: PropsInterface) => {
-  const { defaultLocation, google, storeList } = props;
+  const {
+    defaultLocation, google, storeList, setIsShowModal,
+  } = props;
   return (
     defaultLocation!
       ? (
@@ -28,7 +31,7 @@ const CustomMap = (props: PropsInterface) => {
               title={s.storeName}
               position={{ lat: s.lat, lng: s.lng }}
               // eslint-disable-next-line no-console
-              onClick={() => console.debug('a')}
+              onClick={() => setIsShowModal(s)}
             />
           ))}
         </Map>

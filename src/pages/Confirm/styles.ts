@@ -53,6 +53,9 @@ const useStyles = makeStyles(() => createStyles({
       backgroundColor: '#d97827',
     },
   },
+  disabledButton: {
+    backgroundColor: '#a5a5a5',
+  },
 }));
 
 export default useStyles;

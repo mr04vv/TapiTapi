@@ -45,7 +45,15 @@ const Confirm = () => {
         )
       }
       <hr className={classes.border} />
-      <Button className={classes.determineButton} onClick={() => confirmItem.setIsShowModal(true)}>ご注文内容を確認する</Button>
+
+      <Button
+        className={classes.determineButton}
+        onClick={() => confirmItem.setIsShowModal(true)}
+        disabled={!confirmItem.items || confirmItem.items.length < 1}
+        classes={{ disabled: classes.disabledButton }}
+      >
+        ご注文内容を確認する
+      </Button>
     </div>
   );
 };
