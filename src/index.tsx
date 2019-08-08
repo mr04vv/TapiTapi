@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import configureStore from 'reduxes';
+import reactDom from 'react-dom';
+import * as firebase from 'firebase';
+import GeoSearch from 'pages/GeoSearch';
 import DetailMenu from 'pages/DetailMenu';
 import Notification from 'pages/Notification';
 import OrderComplete from 'pages/OrderComplete';
 import PaymentComplete from 'pages/PaymentComplete';
 import MenuList from 'pages/MenuList';
-import configureStore from 'reduxes';
-import reactDom from 'react-dom';
-import * as firebase from 'firebase';
 import Confirm from 'pages/Confirm';
 import History from 'pages/History';
 import PromptLogin from 'components/PromptLogin';
@@ -36,6 +37,8 @@ const store = configureStore();
 
 const App = () => (
   <Switch>
+    <Route exact path="/" component={GeoSearch} />
+    <Route exact path="/geoSearch" component={GeoSearch} />
     <Route exact path="/notification" component={Notification} />
     <Route exact path="/ordered/:item" component={OrderComplete} />
     <Route exact path="/paid/:orderId" component={PaymentComplete} />

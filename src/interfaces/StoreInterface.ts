@@ -6,6 +6,8 @@ interface StoreInterface {
   tellNumber: string;
   time: string;
   zipCode: string;
+  lat: number;
+  lng: number;
 }
 
 export default StoreInterface;

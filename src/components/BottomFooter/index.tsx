@@ -14,7 +14,7 @@ const BottomFooter = () => {
 
   return (
     <BottomNavigation showLabels value={nav.value} onChange={nav.handleChange} className={classes.root}>
-      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/menus" icon={<SearchIcon />} />
+      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/" icon={<SearchIcon />} />
       <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/histories" icon={<History />} />
       <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/notif" icon={<NotificationsNone />} />
       <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/prompt" icon={<AccountCircle />} />
