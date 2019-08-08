@@ -6,9 +6,6 @@ import 'firebase/firestore';
 const useManageInfo = () => {
   const { match } = useReactRouter();
   const { params }: any = match;
-  const [isError, setIsError] = useState<boolean>(false);
-  const [isStoreError, setIsStoreError] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [orderList, setOrderList] = useState<any[]>([]);
   const [index, setIndex] = useState<number>(0);
   const UP_KEY = 38;
@@ -66,7 +63,7 @@ const useManageInfo = () => {
         setOrderList(orders);
       });
     return db;
-  }, []);
+  }, [params]);
 
 
   return {
