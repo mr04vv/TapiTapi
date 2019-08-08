@@ -6,6 +6,7 @@ const useGeoLocation = () => {
   const { storeList } = useStoreList();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
+
   useEffect(() => {
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
