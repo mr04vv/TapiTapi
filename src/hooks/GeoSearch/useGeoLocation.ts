@@ -1,25 +1,35 @@
 import { useState, useEffect } from 'react';
+import useStoreList from 'hooks/Store/useStoreList';
+import StoreInterface from 'interfaces/StoreInterface';
+
 // import { positions } from '@material-ui/system';
 
 const useGeoLocation = () => {
   const [currentPosition, setCurrentPosition] = useState<Position>();
-
+  const storeList: StoreInterface[] = useStoreList().storeList;
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isError, setIsError] = useState<boolean>(false);
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
+    window.navigator.geolocation.getCurrentPosition(
         (position) => {
           if (position) {
-            console.debug(position);
             setCurrentPosition(position);
+            setIsLoading(false)
           }
         },
-        error => console.error(error),
+        error => {
+          setIsLoading(false)
+          setIsError(true)
+        },
+        {timeout:10000}
       );
-    }
   }, []);
 
   return {
     currentPosition,
+    storeList,
+    isLoading,
+    isError,
   };
 };
 

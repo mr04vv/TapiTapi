@@ -1,12 +1,21 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from 'pages/Home';
-import Search from 'pages/Search';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
 import GeoSearch from 'pages/GeoSearch';
+import DetailMenu from 'pages/DetailMenu';
+import Notification from 'pages/Notification';
+import OrderComplete from 'pages/OrderComplete';
+import PaymentComplete from 'pages/PaymentComplete';
+import MenuList from 'pages/MenuList';
+import Confirm from 'pages/Confirm';
+import History from 'pages/History';
+import PromptLogin from 'components/PromptLogin';
+import BottomFooter from 'components/BottomFooter';
+import Management from 'pages/Management';
+import QrCodeReader from 'components/QrReader';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -28,9 +37,20 @@ const store = configureStore();
 
 const App = () => (
   <Switch>
-    <Route exact path="/search" component={Search} />
+    <Route exact path="/" component={GeoSearch} />
     <Route exact path="/geoSearch" component={GeoSearch} />
-    <Route exact path="" component={Home} />
+    <Route exact path="/notification" component={Notification} />
+    <Route exact path="/ordered/:item" component={OrderComplete} />
+    <Route exact path="/paid/:orderId" component={PaymentComplete} />
+    <Route exact path="/menus/:storeId" component={MenuList} />
+    <Route exact path="/menus/:storeId/detail" component={DetailMenu} />
+    <Route exact path="/menus/:storeId/confirm" component={Confirm} />
+    <Route exact path="/notif" component={Notification} />
+    <Route exact path="/histories" component={History} />
+    <Route exact path="/management/:storeId" component={Management} />
+    <Route exact path="/qr/:storeId" component={QrCodeReader} />
+    {/* 必要ないけど確認するためにルーティング追加してる */}
+    <Route exact path="/prompt" component={PromptLogin} />
   </Switch>
 );
 
@@ -39,6 +59,7 @@ reactDom.render(
   <Provider store={store}>
     <Router>
       <App />
+      <BottomFooter />
     </Router>
   </Provider>,
   document.getElementById('root'),
