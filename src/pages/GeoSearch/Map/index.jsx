@@ -30,6 +30,6 @@ const CustomMap = (props) => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: ('AIzaSyA7nrHvH38do8WHwKP-UPFedPJzUgw324Q'),
+  apiKey: (process.env.REACT_APP_HELLO_WORLD),
   language: 'japanese',
 })(CustomMap);
