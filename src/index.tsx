@@ -13,6 +13,8 @@ import Confirm from 'pages/Confirm';
 import History from 'pages/History';
 import PromptLogin from 'components/PromptLogin';
 import BottomFooter from 'components/BottomFooter';
+import Management from 'pages/Management';
+import QrCodeReader from 'components/QrReader';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -36,12 +38,14 @@ const App = () => (
   <Switch>
     <Route exact path="/notification" component={Notification} />
     <Route exact path="/ordered/:item" component={OrderComplete} />
-    <Route exact path="/paid" component={PaymentComplete} />
+    <Route exact path="/paid/:orderId" component={PaymentComplete} />
     <Route exact path="/menus/:storeId" component={MenuList} />
     <Route exact path="/menus/:storeId/detail" component={DetailMenu} />
     <Route exact path="/menus/:storeId/confirm" component={Confirm} />
     <Route exact path="/notif" component={Notification} />
     <Route exact path="/histories" component={History} />
+    <Route exact path="/management/:storeId" component={Management} />
+    <Route exact path="/qr/:storeId" component={QrCodeReader} />
     {/* 必要ないけど確認するためにルーティング追加してる */}
     <Route exact path="/prompt" component={PromptLogin} />
   </Switch>

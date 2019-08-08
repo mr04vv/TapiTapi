@@ -4,9 +4,9 @@ import { parse } from 'query-string';
 import MenuInterface, { MenuItemInterface } from 'interfaces/MenuInterface';
 import useMenuList from './useMenuList';
 
-type SelectType = 'ゼロ' | '少なめ' | 'ふつう' | '多め' | '不可'
+export type SelectType = 'ゼロ' | '少なめ' | 'ふつう' | '多め' | '不可'
 const Choice: SelectType[] = ['ゼロ', '少なめ', 'ふつう', '多め'];
-type ToppingType = 'パール(タピオカ)' | 'ミルクフォーム' | 'アロエ' | 'ナタデココ' | 'バジルシード' | 'グラスジェリー'
+export type ToppingType = 'パール(タピオカ)' | 'ミルクフォーム' | 'アロエ' | 'ナタデココ' | 'バジルシード' | 'グラスジェリー'
 const ToppingTypeList: ToppingType[] = ['パール(タピオカ)', 'ミルクフォーム', 'アロエ', 'ナタデココ', 'バジルシード', 'グラスジェリー'];
 export type TempType = 'ICED' | 'HOT';
 const TempList: TempType[] = ['ICED', 'HOT'];

@@ -24,7 +24,9 @@ const useConfirm = () => {
     // localStorage.removeItem(`item${store.store!.id}`);
     const db = firebase.firestore();
     setIsOrderLoading(true);
-    const savedInfo = await db.collection('orderList').add({ ...items, isRead: false, storeInfo: store.store });
+    const savedInfo = await db.collection('orderList').add({
+      items, isRead: false, storeInfo: store.store, isFinished: false, storeId: store.store!.id, id: 0,
+    });
     setIsOrderLoading(false);
     history.push({
       pathname: `/ordered/${savedInfo.id}`,
