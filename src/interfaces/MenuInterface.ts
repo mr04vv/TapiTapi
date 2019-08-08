@@ -2,7 +2,7 @@ interface MenuInterface {
     categoryId: number;
     isOnlyIced?: boolean;
     items: MenuItemInterface[];
-  }
+}
 
 export interface MenuItemInterface {
   id: number;

@@ -19,7 +19,7 @@ const useOrderedItem = () => {
       const data = doc.data();
       if (data!.isRead) {
         history.push({
-          pathname: '/paid',
+          pathname: `/paid/${data!.id}`,
         });
       }
     });
