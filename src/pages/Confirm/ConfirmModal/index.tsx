@@ -23,7 +23,8 @@ const ConfirmModal = ({
       <div className={classes.buttonWrapper}>
         <Button
           className={classes.cancel}
-          onClick={() => isLoading && handleChange(false)}
+          onClick={() => handleChange(false)}
+          disabled={isLoading}
           variant="contained"
           color="inherit"
         >
