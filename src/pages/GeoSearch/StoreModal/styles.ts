@@ -86,5 +86,8 @@ export const customStyles = {
     outline: 'none',
     padding: '12px',
     margin: '0 auto',
+    transition: 'all .3s ease-out',
+    transform: 'translatey(-100%); opacity:0',
+    transitionDuration: '0.4s',
   },
 };

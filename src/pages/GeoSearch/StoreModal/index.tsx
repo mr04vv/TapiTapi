@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { Button } from '@material-ui/core';
 import StoreInterface from 'interfaces/StoreInterface';
 import useStyles, { customStyles } from './styles';
+import './style.css';
 
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
@@ -22,6 +23,7 @@ const StoreModal = ({
   return (
     <Modal
       isOpen={!!isOpen}
+      closeTimeoutMS={600}
       style={customStyles}
       contentLabel="Example Modal"
       className={classes.modalTitle}

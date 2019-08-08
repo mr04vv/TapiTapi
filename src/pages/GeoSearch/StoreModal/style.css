@@ -1,0 +1,41 @@
+.ReactModal__Content {
+
+  transition: all .3s ease-out;
+  transform:translatey(-100%); opacity:0;
+  transition-duration:0.4s;
+}
+
+/* .ReactModal__Content--after-open {
+  transition-delay: 0.15s;
+} */
+
+.ReactModal__Content--after-open {
+  transform: none;
+  opacity: 1;
+}
+
+.ReactModal__Content--before-close {
+  transition: all .9s ease-in-out;
+  transform:translatey(-100%); opacity:0;
+  opacity: 0;
+  transition-duration:0.4s;
+}
+
+
+
+.ReactModal__Overlay {    
+  transition: all .3s ease-out;
+  transform:translatey(0%); opacity:0;
+  transition-duration:0.2s;
+}
+
+.ReactModal__Overlay--after-open {
+  transform: none;
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  transition-delay: 0.1s;
+}
