@@ -3,7 +3,6 @@ import useStoreList from 'hooks/Store/useStoreList';
 import StoreInterface from 'interfaces/StoreInterface';
 import useReactRouter from 'use-react-router';
 
-
 const useGeoLocation = () => {
   const [currentPosition, setCurrentPosition] = useState<Position>();
   const { storeList } = useStoreList();
@@ -43,7 +42,6 @@ const useGeoLocation = () => {
     isError,
     isShowModal,
     setIsShowModal: (v: StoreInterface | false) => {
-      console.debug(v);
       setIsShowModal(v);
     },
     moveMenuPageByStoreId,
