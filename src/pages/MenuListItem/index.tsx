@@ -11,16 +11,16 @@ interface PropsInterface {
     storeId: number;
 }
 
-const teaAde = require('images/ade.png');
-const milkTea = require('images/milk.png');
-const juilce = require('images/ju.png');
-const original = require('images/ori.png');
-const pudding = require('images/pudding.png');
-const smoothie = require('images/sm.png');
-const so = require('images/so.png');
-const talt = require('images/talt.png');
-const teaTalt = require('images/teatalt.png');
-const special = require('images/spe.png');
+const teaAde = require('images/drink_tapioca_green.png');
+const milkTea = require('images/drink_tapioca_white.png');
+const juilce = require('images/drink_coke.png');
+const original = require('images/drink_tapioca_pink.png');
+const pudding = require('images/sweets_yaki_purin_pudding.png');
+const smoothie = require('images/tapioca_drink.png');
+const so = require('images/sweets_dutch_baby_pancake.png');
+const talt = require('images/sweets_fruit_tarte.png');
+const teaTalt = require('images/sweets_fruit_tarte.png');
+const special = require('images/tapioca_drink.png');
 
 const MenuListItem = ({
   label, menus, categories, storeId,

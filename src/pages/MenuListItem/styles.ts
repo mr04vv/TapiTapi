@@ -50,7 +50,7 @@ const useStyles = makeStyles(() => createStyles({
   },
   menuImage: {
     height: '70px',
-    width: '70px',
+    width: '50px',
     margin: 'auto 0 auto auto',
   },
   enMenuName: {

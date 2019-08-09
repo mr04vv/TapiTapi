@@ -8,7 +8,7 @@ import CategoryInterface from 'interfaces/CategoryInterface';
 import ProgressCircle from 'components/ProgressCircle';
 import useStyles from './styles';
 
-const thumbnailUrl = require('images/menu.png');
+const thumbnailUrl = require('images/035ce9ee5f2f4efa3b5c243bf24d2b9c_s.jpg');
 
 interface InfoInterface {
   isLoading: boolean;
