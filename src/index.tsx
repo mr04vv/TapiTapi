@@ -38,20 +38,25 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-const messaging = firebase.messaging();
-messaging.requestPermission()
-  .then(() => console.log('granted'))
-  .catch(e => console.log(e));
+let messaging: firebase.messaging.Messaging | null = null;
+if (firebase.messaging.isSupported()) {
+  messaging = firebase.messaging();
+  messaging.usePublicVapidKey('{yourkey');
+  messaging.requestPermission()
+    .then(() => console.log('granted'))
+    .catch(e => console.log(e));
 
-messaging.requestPermission()
-  .then(() => messaging.getToken())
-  .then(async (token) => {
-    console.log(token);
-    const db = firebase.firestore();
-    await db.collection('users').doc().set({ token });
-    messaging.onMessage(payload => alert(JSON.stringify(payload.body)));
-  })
-  .catch(e => console.log(e));
+  messaging.requestPermission()
+    .then(() => messaging!.getToken())
+    .then(async (token) => {
+      console.log(token);
+      const db = firebase.firestore();
+      await db.collection('users').doc().set({ token });
+      messaging!.onMessage(payload => alert(JSON.stringify(payload.body)));
+    })
+    .catch(e => console.log(e));
+}
+
 
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 const store = configureStore();
