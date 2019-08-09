@@ -90,6 +90,7 @@ const useGeoLocation = () => {
             rr.setDirections(response);
             setIsShowModal(false);
           } else {
+            // eslint-disable-next-line no-alert
             window.alert(`Directions request failed due to ${status}`);
           }
         },
