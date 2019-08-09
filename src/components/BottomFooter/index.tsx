@@ -17,7 +17,7 @@ const BottomFooter = () => {
       <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/" icon={<SearchIcon />} />
       <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/histories" icon={<History />} />
       <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/notif" icon={<NotificationsNone />} />
-      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/prompt" icon={<AccountCircle />} />
+      <BottomNavigationAction className={classes.icon} classes={{ selected: classes.selected }} value="/accounts" icon={<AccountCircle />} />
     </BottomNavigation>
   );
 };

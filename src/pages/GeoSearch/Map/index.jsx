@@ -19,6 +19,7 @@ const CustomMap = (props) => {
         >
           {storeList.map(s => (
             <Marker
+              key={s.storeName}
               title={s.storeName}
               position={{ lat: s.lat, lng: s.lng }}
               onClick={() => setIsShowModal(s)}

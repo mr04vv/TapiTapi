@@ -12,10 +12,10 @@ import PaymentComplete from 'pages/PaymentComplete';
 import MenuList from 'pages/MenuList';
 import Confirm from 'pages/Confirm';
 import History from 'pages/History';
-import PromptLogin from 'components/PromptLogin';
 import BottomFooter from 'components/BottomFooter';
 import Management from 'pages/Management';
 import QrCodeReader from 'components/QrReader';
+import AccountMenu from 'pages/AccountMenu';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -32,7 +32,7 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 const store = configureStore();
 
 const App = () => (
@@ -49,8 +49,7 @@ const App = () => (
     <Route exact path="/histories" component={History} />
     <Route exact path="/management/:storeId" component={Management} />
     <Route exact path="/qr/:storeId" component={QrCodeReader} />
-    {/* 必要ないけど確認するためにルーティング追加してる */}
-    <Route exact path="/prompt" component={PromptLogin} />
+    <Route exact path="/accounts" component={AccountMenu} />
   </Switch>
 );
 
