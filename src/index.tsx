@@ -41,7 +41,7 @@ firebase.initializeApp(firebaseConfig);
 let messaging: firebase.messaging.Messaging | null = null;
 if (firebase.messaging.isSupported()) {
   messaging = firebase.messaging();
-  messaging.usePublicVapidKey('{yourkey');
+  // messaging.usePublicVapidKey('{yourkey');
   messaging.requestPermission()
     .then(() => console.log('granted'))
     .catch(e => console.log(e));
