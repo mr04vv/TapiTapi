@@ -31,7 +31,7 @@ const Notification = () => {
     <div className={classes.bodyWrapper}>
       <h1 className={commonClasses.caption}>お知らせ</h1>
       {notificationList.map((notification: NotificationInterface) => (
-        <div className={classes.contentWrapper}>
+        <div key={notification.id} className={classes.contentWrapper}>
           <div className={classes.contentBody}>
             <img src={notification.imageUrl} alt="imageUrl" className={classes.image} />
             <div className={classes.rightWrapper}>

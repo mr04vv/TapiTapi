@@ -29,7 +29,7 @@ const Item = ({ selectedItem, deleteTools }: PropsInterface) => {
               <p className={classes.options}>{item.options.join('/')}</p>
               <p className={classes.options}>{`トッピング： ${item.selectedToppings.length === 0 ? 'なし' : item.selectedToppings.join('/')}`}</p>
               <div className={classes.inline}>
-                <p className={classes.options}>{`価格： ${item.ammount}`}</p>
+                <p className={classes.options}>{`価格： ${item.ammount / item.count}`}</p>
                 <p className={classes.options}>{`個数： ${item.count}`}</p>
               </div>
               <Button className={classes.orderButton} onClick={() => deleteTools.setSelectedItemId(item.id!)}>✕ カートから削除</Button>
@@ -41,7 +41,7 @@ const Item = ({ selectedItem, deleteTools }: PropsInterface) => {
               <p className={classes.enMenuName}>{item.item.jaName}</p>
               <p className={classes.jaMenuName}>{item.item.enName}</p>
               <div className={classes.inline}>
-                <p className={classes.options}>{`価格： ${item.ammount}`}</p>
+                <p className={classes.options}>{`価格： ${item.ammount / item.count}`}</p>
                 <p className={classes.options}>{`個数： ${item.count}`}</p>
               </div>
               <Button className={classes.orderButton} onClick={() => deleteTools.setSelectedItemId(item.id!)}>✕ カートから削除</Button>

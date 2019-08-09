@@ -1,9 +1,12 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 import GeoSearch from 'pages/GeoSearch';
 import DetailMenu from 'pages/DetailMenu';
 import Notification from 'pages/Notification';
@@ -12,10 +15,10 @@ import PaymentComplete from 'pages/PaymentComplete';
 import MenuList from 'pages/MenuList';
 import Confirm from 'pages/Confirm';
 import History from 'pages/History';
-import PromptLogin from 'components/PromptLogin';
 import BottomFooter from 'components/BottomFooter';
 import Management from 'pages/Management';
 import QrCodeReader from 'components/QrReader';
+import AccountMenu from 'pages/AccountMenu';
 import * as serviceWorker from './serviceWorker';
 
 export const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -31,8 +34,26 @@ const firebaseConfig = {
   appId: '1:779676974115:web:64b3250346ff2c64',
 };
 // Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
 
+
+const messaging = firebase.messaging();
+messaging.requestPermission()
+  .then(() => console.log('granted'))
+  .catch(e => console.log(e));
+
+messaging.requestPermission()
+  .then(() => messaging.getToken())
+  .then(async (token) => {
+    console.log(token);
+    const db = firebase.firestore();
+    await db.collection('users').doc().set({ token });
+    messaging.onMessage(payload => alert(JSON.stringify(payload)));
+  })
+  .catch(e => console.log(e));
+
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 const store = configureStore();
 
 const App = () => (
@@ -49,8 +70,7 @@ const App = () => (
     <Route exact path="/histories" component={History} />
     <Route exact path="/management/:storeId" component={Management} />
     <Route exact path="/qr/:storeId" component={QrCodeReader} />
-    {/* 必要ないけど確認するためにルーティング追加してる */}
-    <Route exact path="/prompt" component={PromptLogin} />
+    <Route exact path="/accounts" component={AccountMenu} />
   </Switch>
 );
 

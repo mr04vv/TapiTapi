@@ -38,7 +38,6 @@ const useStyles = makeStyles(() => createStyles({
     display: 'flex',
     flexDirection: 'column',
   },
-
   border: {
     borderWidth: '0.5px',
     color: '#ebebeb',
@@ -49,8 +48,8 @@ const useStyles = makeStyles(() => createStyles({
     fontSize: '10px',
     letterSpacing: '1.15px',
     color: '#a5a5a5',
-    display: 'block',
-    margin: '5px',
+    width: 'fit-content',
+    margin: 'auto 10px auto auto',
   },
   inline: {
     display: 'flex',
@@ -59,6 +58,7 @@ const useStyles = makeStyles(() => createStyles({
   },
   storeName: {
     ...CommonStyle,
+    margin: '4px auto',
     fontSize: '18px',
     letterSpacing: '2.08px',
   },
@@ -68,6 +68,13 @@ const useStyles = makeStyles(() => createStyles({
   sumPrice: {
     fontSize: '18px',
     color: '#ff9b47',
+  },
+  non: {
+    ...CommonStyle,
+    margin: '16vh auto',
+    fontSize: '14px',
+    textAlign: 'center',
+    letterSpacing: '2.08px',
   },
 }));
 

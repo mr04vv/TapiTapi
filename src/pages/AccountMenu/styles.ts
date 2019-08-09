@@ -8,7 +8,7 @@ const LoginButton: CSSProperties = {
   borderRadius: 0,
   padding: 10,
   width: '290px',
-  margin: '10px auto',
+  margin: '18vh auto',
 };
 
 const Text: CSSProperties = {
@@ -18,8 +18,8 @@ const Text: CSSProperties = {
 
 const useStyles = makeStyles(() => createStyles({
   buttonWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
+    width: '90%',
+    margin: '30px auto 66px',
   },
   twitterIcon: {
     color: '#ffffff',
@@ -35,6 +35,7 @@ const useStyles = makeStyles(() => createStyles({
     color: '#ffffff',
     '@media (max-width: 600px)': {
       width: '80%',
+      display: 'block',
     },
     '&:hover': {
       backgroundColor: '#d97827',
@@ -51,7 +52,7 @@ const useStyles = makeStyles(() => createStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    margin: '35vh auto',
+    margin: '45vh auto',
   },
 }));
 
