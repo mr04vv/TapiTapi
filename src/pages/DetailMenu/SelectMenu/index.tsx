@@ -19,7 +19,7 @@ const SelectMenu = ({
       <div className={classes.titleLetter}>{label}</div>
       <Select value={value} onChange={handleChange}>
         {items.map((item: number) => (
-          <MenuItem value={item}>{item}</MenuItem>
+          <MenuItem key={item} value={item}>{item}</MenuItem>
         ))}
       </Select>
     </div>

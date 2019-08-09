@@ -24,7 +24,7 @@ const RadioMenu = ({
       <div className={classes.label}>{label}</div>
       <RadioGroup className={isRow ? classes.row : ''}>
         {items.map((i: any) => (
-          <div>
+          <div key={i}>
             <FormControlLabel
               disabled={disabled}
               value="female"

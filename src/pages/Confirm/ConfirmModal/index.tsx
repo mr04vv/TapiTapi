@@ -8,9 +8,17 @@ import useStyles, { customStyles } from './styles';
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
 
+interface PropsInterface {
+  handleChange: (v: any) => void;
+  isOpen: boolean;
+  onConfirm: any;
+  isLoading: boolean;
+  isDelete?: boolean
+}
+
 const ConfirmModal = ({
-  handleChange, isOpen, onConfirm, isLoading,
-}: any) => {
+  handleChange, isOpen, onConfirm, isLoading, isDelete,
+}: PropsInterface) => {
   const classes = useStyles();
   return (
     <Modal
@@ -19,7 +27,7 @@ const ConfirmModal = ({
       contentLabel="Example Modal"
       className={classes.modalTitle}
     >
-      ご注文を確定します
+      {isDelete ? 'カートから削除しますか？' : 'ご注文を確定しますか？'}
       <div className={classes.buttonWrapper}>
         <Button
           className={classes.cancel}

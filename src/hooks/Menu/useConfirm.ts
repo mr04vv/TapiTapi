@@ -3,6 +3,7 @@ import useGetStore from 'hooks/Store/useGetStore';
 import useReactRouter from 'use-react-router';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import { OrderedItemInterface } from 'interfaces/OrderedMenuInterface';
 
 const useConfirm = () => {
   const store = useGetStore();
@@ -10,7 +11,9 @@ const useConfirm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isOrderLoading, setIsOrderLoading] = useState<boolean>(false);
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
-  const { history } = useReactRouter();
+  const [selectedItemId, setSelectedItemId] = useState<string | false>(false);
+  const { history, match } = useReactRouter();
+  const { params }: any = match;
 
   useEffect(() => {
     if (store.store) {
@@ -33,6 +36,17 @@ const useConfirm = () => {
     });
   };
 
+  const confirmDelete = () => {
+    const storageItemKey = `item${params.storeId}`;
+    const storageItems = localStorage.getItem(storageItemKey);
+    const selectedItemList = JSON.parse(storageItems!);
+    const selectedItemListAfterDeleted = selectedItemList.filter((i: OrderedItemInterface) => i.id !== selectedItemId);
+    localStorage.removeItem(storageItemKey);
+    localStorage.setItem(storageItemKey, JSON.stringify(selectedItemListAfterDeleted));
+    setItems(selectedItemListAfterDeleted);
+    setSelectedItemId(false);
+  };
+
   return {
     items,
     isLoading,
@@ -40,6 +54,11 @@ const useConfirm = () => {
     setIsShowModal,
     confirm,
     isOrderLoading,
+    deleteTools: {
+      selectedItemId,
+      setSelectedItemId,
+      confirmDelete,
+    },
   };
 };
 export default useConfirm;

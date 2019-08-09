@@ -26,7 +26,7 @@ const CheckMenu = ({
       <div className={classes.label}>{label}</div>
       <RadioGroup className={isRow ? classes.row : ''}>
         {items.map((i: any) => (
-          <div className={classes.inline}>
+          <div key={i} className={classes.inline}>
             <FormControlLabel
               disabled={disabled}
               control={(

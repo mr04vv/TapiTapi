@@ -1,11 +1,11 @@
 import * as React from 'react';
 import useStyles from './styles';
 
-const HistoryItemList = ({ items }: any) => {
+const HistoryItemList = ({ history }: any) => {
   const classes = useStyles();
   return (
-    items.map((i: any) => (
-      <div className={classes.item}>
+    history.items.map((i: any) => (
+      <div key={history.createdDate + i.id} className={classes.item}>
         <p className={classes.jaMenuName}>{i.jaName}</p>
         <p className={classes.enMenuName}>{i.enName}</p>
         <div className={classes.options}>

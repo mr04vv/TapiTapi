@@ -9,6 +9,7 @@ const CommonStyle: CSSProperties = {
 const useStyles = makeStyles(() => createStyles({
   border: {
     borderWidth: '0.5px',
+    margin: '4px',
   },
   enMenuName: {
     ...CommonStyle,
@@ -35,6 +36,15 @@ const useStyles = makeStyles(() => createStyles({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  orderButton: {
+    color: '#a5a5a5',
+    '&:hover': {
+      backgroundColor: 'unset',
+    },
+    display: 'block',
+    margin: '0 auto',
+    padding: '0',
   },
 }));
 

@@ -18,6 +18,7 @@ export interface OrderedItemInterface {
   selectedToppings: ToppingType[];
   options: string[];
   item: MenuItemInterface;
+  id?: string;
 }
 
 export default OrderedMenuInterface;

@@ -25,7 +25,7 @@ const Confirm = () => {
       <div className={classes.body}>
         <h1 className={commonClasses.commonCaption}>ご注文内容の確認</h1>
         {confirmItem.items
-        && <Item selectedItem={confirmItem.items} />
+        && <Item selectedItem={confirmItem.items} deleteTools={confirmItem.deleteTools} />
         }
       </div>
       <hr className={classes.border} />
