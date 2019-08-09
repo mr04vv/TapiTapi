@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import configureStore from 'reduxes';
 import reactDom from 'react-dom';
 import * as firebase from 'firebase';
+import 'firebase/firestore';
 import GeoSearch from 'pages/GeoSearch';
 import DetailMenu from 'pages/DetailMenu';
 import Notification from 'pages/Notification';
@@ -31,7 +32,25 @@ const firebaseConfig = {
   appId: '1:779676974115:web:64b3250346ff2c64',
 };
 // Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
+
+
+const messaging = firebase.messaging();
+messaging.requestPermission()
+  .then(() => console.log('granted'))
+  .catch(e => console.log(e));
+
+messaging.requestPermission()
+.then(() => messaging.getToken())
+.then(async(token) => {
+  console.log(token);
+  const db = firebase.firestore();
+  await db.collection('users').doc().set({token})
+  messaging.onMessage(payload => alert(JSON.stringify(payload)));
+})
+.catch(e => console.log(e));
+
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 const store = configureStore();
 
