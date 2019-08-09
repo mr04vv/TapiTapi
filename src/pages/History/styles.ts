@@ -48,7 +48,7 @@ const useStyles = makeStyles(() => createStyles({
     fontSize: '10px',
     letterSpacing: '1.15px',
     color: '#a5a5a5',
-    width: 'fit-content',    
+    width: 'fit-content',
     margin: 'auto 10px auto auto',
   },
   inline: {
@@ -75,7 +75,7 @@ const useStyles = makeStyles(() => createStyles({
     fontSize: '14px',
     textAlign: 'center',
     letterSpacing: '2.08px',
-  }
+  },
 }));
 
 export default useStyles;

@@ -34,7 +34,7 @@ const History = () => {
             <hr className={classes.border} />
           </div>
         ))}
-      {user.userId && user.historyItems && user.historyItems.length === 0 
+      {user.userId && user.historyItems && user.historyItems.length === 0
       && <p className={classes.non}>購入履歴はありません</p>
       }
 
