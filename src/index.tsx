@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -42,14 +44,14 @@ messaging.requestPermission()
   .catch(e => console.log(e));
 
 messaging.requestPermission()
-.then(() => messaging.getToken())
-.then(async(token) => {
-  console.log(token);
-  const db = firebase.firestore();
-  await db.collection('users').doc().set({token})
-  messaging.onMessage(payload => alert(JSON.stringify(payload)));
-})
-.catch(e => console.log(e));
+  .then(() => messaging.getToken())
+  .then(async (token) => {
+    console.log(token);
+    const db = firebase.firestore();
+    await db.collection('users').doc().set({ token });
+    messaging.onMessage(payload => alert(JSON.stringify(payload)));
+  })
+  .catch(e => console.log(e));
 
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 const store = configureStore();
