@@ -26,7 +26,7 @@ const useConfirm = () => {
   }, [store.store]);
 
   const confirm = async () => {
-    // localStorage.removeItem(`item${store.store!.id}`);
+    localStorage.removeItem(`item${store.store!.id}`);
     const db = firebase.firestore();
     setIsOrderLoading(true);
     const savedInfo = await db.collection('orderList').add({
