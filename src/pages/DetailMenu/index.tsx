@@ -8,7 +8,7 @@ import RadioMenu from './RadioMenu';
 import CheckMenu from './CheckMenu';
 
 
-const thumbnail = require('images/img_ad1aa8fefac6d770b0441fefbfceb61b917960.jpg');
+const thumbnail = require('images/ed7c041b81e142316a07a8411e726c4f_s.jpg');
 
 const DetailMenu = () => {
   const classes = useStyles();
