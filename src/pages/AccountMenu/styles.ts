@@ -52,7 +52,7 @@ const useStyles = makeStyles(() => createStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    margin: '45vh auto',
+    margin: '35vh auto',
   },
 }));
 

@@ -76,6 +76,12 @@ const useStyles = makeStyles(() => createStyles({
     textAlign: 'center',
     letterSpacing: '2.08px',
   },
+  loading: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    margin: '35vh auto',
+  },
 }));
 
 export default useStyles;

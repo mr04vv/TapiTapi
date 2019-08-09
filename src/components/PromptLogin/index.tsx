@@ -2,18 +2,12 @@ import * as React from 'react';
 import { Button } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import ProgressCircle from 'components/ProgressCircle';
 import useStyles from './styles';
 
 const PromptLogin = ({ login }: any) => {
   const classes = useStyles();
   return (
     <div className={classes.buttonWrapper}>
-      {login.isLoading && (
-      <div className={classes.loading}>
-        <ProgressCircle size="30px" relative />
-      </div>
-      )}
       {!login.isLoading
           && (
           <React.Fragment>

@@ -17,6 +17,7 @@ const useLogin = () => {
 
   useMemo(() => {
     firebase.auth().onAuthStateChanged((user) => {
+      setIsLoading(true);
       if (user) {
         dispatch(loginSuccess({}));
         setIsLoggedIn(true);
