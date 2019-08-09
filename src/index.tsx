@@ -49,7 +49,7 @@ messaging.requestPermission()
     console.log(token);
     const db = firebase.firestore();
     await db.collection('users').doc().set({ token });
-    messaging.onMessage(payload => alert(JSON.stringify(payload)));
+    messaging.onMessage(payload => alert(JSON.stringify(payload.body)));
   })
   .catch(e => console.log(e));
 
