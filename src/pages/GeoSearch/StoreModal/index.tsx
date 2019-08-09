@@ -14,10 +14,11 @@ interface PropsInterface {
   handleChange: any;
   isOpen: StoreInterface | false ;
   moveMenuPage: () => void;
+  showDirection: () => void;
 }
 
 const StoreModal = ({
-  handleChange, isOpen, moveMenuPage,
+  handleChange, isOpen, moveMenuPage, showDirection,
 }: PropsInterface) => {
   const classes = useStyles();
   return (
@@ -48,6 +49,14 @@ const StoreModal = ({
           onClick={moveMenuPage}
         >
         メニュー画面へ
+        </Button>
+        <Button
+          className={classes.button}
+          variant="contained"
+          color="inherit"
+          onClick={showDirection}
+        >
+        経路を表示
         </Button>
       </div>
     </Modal>

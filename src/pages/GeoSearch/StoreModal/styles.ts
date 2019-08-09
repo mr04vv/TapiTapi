@@ -8,8 +8,8 @@ const Button: CSSProperties = {
   borderRadius: 0,
   padding: 4,
   height: 'fit-content',
+  width: 'fit-content',
   margin: '0 auto',
-  width: '30vw',
 };
 
 const CommonStyle: CSSProperties = {

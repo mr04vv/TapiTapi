@@ -3,7 +3,6 @@ import * as React from 'react';
 import useGeoLocation from 'hooks/GeoSearch/useGeoLocation';
 import ProgressCircle from 'components/ProgressCircle';
 import useStyles from './styles';
-import CustomMap from './Map';
 import StoreModal from './StoreModal';
 
 const GeoSearch = () => {
@@ -11,12 +10,21 @@ const GeoSearch = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
+      {position.isLoading
+        && (
+        <div className={classes.loading}>
+          <ProgressCircle size="30px" />
+        </div>
+        )
+      }
+      <div id="map" className={classes.map} />
       <StoreModal
         isOpen={position.isShowModal}
         handleChange={position.setIsShowModal}
         moveMenuPage={position.moveMenuPageByStoreId}
+        showDirection={position.showDirection}
       />
-      {position.isLoading && (
+      {/* {position.isLoading && (
       <div className={classes.loading}>
         <ProgressCircle size="30px" />
       </div>
@@ -32,7 +40,7 @@ const GeoSearch = () => {
           storeList={position.storeList}
           setIsShowModal={position.setIsShowModal}
         />
-      )}
+      )} */}
     </React.Fragment>
 
 
