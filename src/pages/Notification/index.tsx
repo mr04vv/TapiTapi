@@ -11,19 +11,19 @@ const Notification = () => {
 
   const notificationList: NotificationInterface[] = [
     {
-      id: 1, content: 'Gongcha全店舗の検索が可能になりました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/01',
+      id: 1, content: '当店が4周年を迎えました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/03/25',
     },
     {
-      id: 2, content: 'Gongcha全店舗の検索が可能になりました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/01',
+      id: 2, content: '全店舗の検索が可能になりました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/01',
     },
     {
-      id: 3, content: 'Gongcha全店舗の検索が可能になりました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/01',
+      id: 3, content: '所沢店がオープンしました', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/26',
     },
     {
-      id: 4, content: 'Gongcha全店舗の検索が可能になりました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/01',
+      id: 4, content: 'アルシェ大宮店がオープンしました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/26',
     },
     {
-      id: 5, content: 'Gongcha全店舗の検索が可能になりました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/01',
+      id: 5, content: 'パークシティ武蔵小山店がオープンしました。', imageUrl: 'https://www.fashion-press.net/img/news/47938/XH4.jpg', createdDate: '2019/07/26',
     },
   ];
 
