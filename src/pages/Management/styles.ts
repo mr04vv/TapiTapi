@@ -69,6 +69,18 @@ const useStyles = makeStyles(() => createStyles({
     padding: 5,
     alignItems: 'center',
   },
+  store: {
+    fontSize: '10px',
+    margin: '2px',
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  wrapper: {
+    display: 'flex',
+    position: 'absolute',
+    bottom: '10px',
+  },
 }));
 
 export default useStyles;

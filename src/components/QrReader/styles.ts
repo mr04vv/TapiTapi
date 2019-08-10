@@ -42,6 +42,18 @@ const useStyles = makeStyles(() => createStyles({
     color: '#ff9b47',
     letterSpacing: '1.85px',
   },
+  store: {
+    fontSize: '10px',
+    margin: '2px',
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  wrapper2: {
+    display: 'flex',
+    position: 'absolute',
+    bottom: '10px',
+  },
 }));
 
 export default useStyles;
