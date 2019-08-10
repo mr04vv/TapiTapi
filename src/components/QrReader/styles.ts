@@ -51,7 +51,6 @@ const useStyles = makeStyles(() => createStyles({
   },
   wrapper2: {
     display: 'flex',
-    position: 'absolute',
     bottom: '10px',
   },
 }));
