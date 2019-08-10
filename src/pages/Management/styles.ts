@@ -77,7 +77,6 @@ const useStyles = makeStyles(() => createStyles({
   },
   wrapper: {
     display: 'flex',
-    position: 'absolute',
     bottom: '10px',
   },
 }));
