@@ -18,7 +18,6 @@ const useGeoLocation = () => {
   const [ss, setS] = useState<any>();
   const [rr, setR] = useState<any>();
 
-  let mapRenderer: any;
 
   useEffect(() => {
     window.navigator.geolocation.getCurrentPosition(
@@ -29,7 +28,7 @@ const useGeoLocation = () => {
           setS(directionsService);
           setR(directionsRenderer);
           setCurrentPosition(position);
-          mapRenderer = new google.maps.Map(document.getElementById('map'), {
+          const mapRenderer = new google.maps.Map(document.getElementById('map'), {
             zoom: 14,
             center: { lat: position.coords.latitude, lng: position.coords.longitude },
           });
@@ -75,7 +74,7 @@ const useGeoLocation = () => {
         marker.setMap(map);
       });
     }
-  }, [storeList, map]);
+  }, [storeList, map, rr]);
 
   const moveMenuPageByStoreId = () => {
     if (isShowModal) {
