@@ -33,6 +33,15 @@ const useGeoLocation = () => {
             zoom: 14,
             center: { lat: position.coords.latitude, lng: position.coords.longitude },
           });
+          const marker = new google.maps.Marker({
+            position: mapRenderer.getCenter(),
+            icon: {
+              path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+              scale: 4,
+            },
+            map: mapRenderer,
+          });
+          marker.setMap(mapRenderer);
           setLat(position.coords.latitude);
           setLng(position.coords.longitude);
           setMap(mapRenderer);
