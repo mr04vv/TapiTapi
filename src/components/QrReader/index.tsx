@@ -24,9 +24,10 @@ const QrCodeReader = () => {
             style={{ width: '100%', transfome: 'scale(1, -1)' }}
             facingMode="user"
           />
-          <div className={classes.error}>{reader.isStoreError && '店舗が違います'}</div>
-          <div className={classes.error}>{reader.isError && '読み取りに失敗しました'}</div>
-          <div className={classes.loading}>{reader.isLoading && '読み取り中'}</div>
+          <div className={classes.error}>{reader.isSuccess && '読み取り成功'}</div>
+          <div className={classes.error}>{!reader.isSuccess && reader.isStoreError && '店舗が違います'}</div>
+          <div className={classes.error}>{!reader.isSuccess && reader.isError && '読み取りに失敗しました'}</div>
+          <div className={classes.loading}>{!reader.isSuccess && reader.isLoading && '読み取り中'}</div>
         </div>
         <p className={classes.camText}>
         ここにかざしてください

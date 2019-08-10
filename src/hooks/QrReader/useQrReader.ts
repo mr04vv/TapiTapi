@@ -9,6 +9,7 @@ const useQrReader = () => {
   const [isError, setIsError] = useState<boolean>(false);
   const [isStoreError, setIsStoreError] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   const fetchItemInfo = async (id: string | null) => {
     if (id === null || isLoading) {
@@ -19,7 +20,7 @@ const useQrReader = () => {
     const res = await db.collection('orderList').doc(id).get();
     if (res.data()) {
       const info = res.data();
-      if (Number(params.storeId) !== info!.storeInfo.id) {
+      if (Number(params.storeId) !== info!.storeInfo.id && !isSuccess) {
         setIsStoreError(true);
         setTimeout(() => {
           setIsStoreError(false);
@@ -27,7 +28,7 @@ const useQrReader = () => {
         setIsLoading(false);
         return;
       }
-      if (info!.isRead || info!.isFinish) {
+      if ((info!.isRead || info!.isFinish) && !isSuccess) {
         setIsError(true);
         setTimeout(() => {
           setIsError(false);
@@ -42,6 +43,10 @@ const useQrReader = () => {
 
       // Update read count
       await db.collection('orderList').doc(id).update({ isRead: true, id: count.data()!.count });
+      setIsSuccess(true);
+      await setTimeout(() => {
+        setIsSuccess(false);
+      }, 1200);
       setIsLoading(false);
     } else {
       setIsError(true);
@@ -65,6 +70,7 @@ const useQrReader = () => {
     isStoreError,
     isLoading,
     readError,
+    isSuccess,
   };
 };
 export default useQrReader;

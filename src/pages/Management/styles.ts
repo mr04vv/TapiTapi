@@ -64,7 +64,6 @@ const useStyles = makeStyles(() => createStyles({
     margin: '10px',
     fontWeight: 500,
     fontStyle: 'normal',
-    backgroundColor: '#d6c4b2',
     borderRadius: '2px',
     padding: 5,
     alignItems: 'center',
