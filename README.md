@@ -21,12 +21,14 @@ https://tapitapi-f601b.firebaseapp.com/
 ## 管理画面(パソコン用)
 管理画面は店舗ごとに用意してあります。
 
-https://tapitapi-f601b.firebaseapp.com/managements/:storeId
-例: https://tapitapi-f601b.firebaseapp.com/managements/2
+https://tapitapi-f601b.firebaseapp.com/management/:storeId
+
+例: https://tapitapi-f601b.firebaseapp.com/management/2
 
 ## QR読み取り(タブレット用)
 QR読み取りは店舗ごとに用意してあります。
 
 https://tapitapi-f601b.firebaseapp.com/qr/:storeId
+
 例: https://tapitapi-f601b.firebaseapp.com/qr/2
 
